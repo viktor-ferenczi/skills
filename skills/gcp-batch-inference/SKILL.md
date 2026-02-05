@@ -35,6 +35,7 @@ Review these documentation pages when you need it for the task at hand:
   - [Creating a batch from BigQuery using the Python SDK](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/batch-prediction-from-bigquery#create-batch-job-python_genai_sdk) 
 - [Resume an incomplete batch inference job](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/batch-prediction-resume)
 - [Context caching](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-overview) - Implicit caching is simpler, but always store and double-check the inference metrics to ensure that prefix caching is actually effective.
+- [Labels for billing](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/multimodal/add-labels-to-api-calls) - Labels are useful for filtering the GCP Billing dashboard for specific models, batches or job executions.
 - [Pricing](https://cloud.google.com/vertex-ai/generative-ai/pricing)
 
 # Abbreviations
