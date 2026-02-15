@@ -1,7 +1,7 @@
 # Platform Coverage
 
 - **Multi-platform:** 125 programs
-- **Linux:** 6 programs
+- **Linux:** 11 programs
 - **Linux, macOS:** 5 programs
 - **Windows:** 2 programs
 - **Linux (systemd):** 2 programs
@@ -14,3 +14,4 @@
 - **Linux (RHEL, CentOS, Fedora, Amazon Linux):** 1 program
 - **Linux (Debian, Ubuntu, and derivatives):** 1 program
 - **Linux (Arch, Manjaro):** 1 program
+- **macOS:** 1 program

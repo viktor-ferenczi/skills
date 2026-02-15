@@ -1,6 +1,6 @@
 ---
 name: silent-cli
-description: Environment variables and parameters for running command line programs reliably in non-interactive environments (unattended). Includes silent modes, color/disable TTY, and reduced output options for 149 CLI tools.
+description: Environment variables and parameters for running command line programs reliably in non-interactive environments (unattended). Includes silent modes, color/disable TTY, and reduced output options for 155 CLI tools.
 tags: [cli, automation, scripting, unattended, environment-variables, flags, ci-cd, devops]
 version: 1.1.0
 author: Viktor Ferenczi
@@ -22,8 +22,8 @@ It documents environment variables, command-line flags, and configuration option
 
 ## Coverage
 
-- **149 programs documented**
-- **114 unique categories** (version control, cloud CLIs, databases, security, monitoring, etc.)
+- **155 programs documented**
+- **117 unique categories** (version control, cloud CLIs, databases, security, monitoring, etc.)
 - **Multi-platform coverage:** Linux, macOS, Windows
 - **Includes:** Core utilities, development tools, CI/CD tools, cloud platforms, container tools, security scanners
 
@@ -35,7 +35,7 @@ It documents environment variables, command-line flags, and configuration option
 ├── INDEX_BY_NAME.md      # Program index alphabetically
 ├── INDEX_BY_CATEGORY.md  # Program index by category
 ├── PLATFORM_COVERAGE.md  # Platform coverage statistics
-├── programs/             # Individual program documentation (149 files)
+├── programs/             # Individual program documentation (155 files)
 │   ├── git.md
 │   ├── curl.md
 │   ├── aws.md
@@ -134,6 +134,20 @@ Each program file includes:
 - **Command-line flags** - Detailed flag reference
 - **Environment variables** - Relevant env vars
 - **Recommended Unattended Usage** - Example scripts
+
+## Windows: Deleting Reserved-Name Files
+
+On Windows, some CLI tools may accidentally create files with reserved names like `nul`, `con`, `aux`, etc. These cannot be deleted normally. Use the `\\?\` prefix to bypass the Win32 name parser:
+
+```cmd
+del "\\?\%cd%\nul"
+```
+
+This works from `cmd.exe`. From PowerShell, use:
+
+```powershell
+cmd /c 'del "\\?\%cd%\nul"'
+```
 
 ## Contributing
 

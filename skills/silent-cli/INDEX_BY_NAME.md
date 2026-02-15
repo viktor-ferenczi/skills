@@ -4,8 +4,8 @@ This index provides a quick reference to all documented programs in the Unattend
 
 ## Overview
 
-- **Total Programs Documented:** 149
-- **Unique Categories:** 114
+- **Total Programs Documented:** 155
+- **Unique Categories:** 117
 - **Coverage:** Multi-platform command-line tools, development utilities, cloud CLIs, databases, networking tools, security scanners, monitoring systems, and more.
 
 ## Alphabetical Index
@@ -17,6 +17,7 @@ This index provides a quick reference to all documented programs in the Unattend
 - [ansible-playbook](programs/ansible-playbook.md) - Configuration Management - Multi-platform
 - [ansible-vault](programs/ansible-vault.md) - Configuration Management (Secrets) - Multi-platform
 - [ant](programs/ant.md) - Java Build Tool - Multi-platform
+- [atop](programs/atop.md) - System Monitoring - Linux
 - [apt / apt-get / apt-cache](programs/apt.md) - Package Management - Linux (Debian, Ubuntu, and derivatives)
 - [aws](programs/aws.md) - Cloud (Amazon Web Services) - Multi-platform
 - [az](programs/az.md) - Cloud (Microsoft Azure) - Multi-platform
@@ -66,6 +67,7 @@ This index provides a quick reference to all documented programs in the Unattend
 - [hydra](programs/hydra.md) - Password Brute Forcer - Multi-platform
 - [iftop](programs/iftop.md) - Network Monitoring - Linux
 - [influx](programs/influx.md) - Time Series Database - Multi-platform
+- [iotop](programs/iotop.md) - Disk I/O Monitoring - Linux
 - [iperf / iperf3](programs/iperf.md) - Network Testing - Multi-platform
 - [jenkins-cli](programs/jenkins-cli.md) - CI/CD - Multi-platform
 - [john](programs/john.md) - Password Cracker - Multi-platform
@@ -93,6 +95,7 @@ This index provides a quick reference to all documented programs in the Unattend
 - [nc / netcat](programs/nc.md) - Network Tools - Multi-platform
 - [nethogs](programs/nethogs.md) - Network Monitoring - Linux
 - [netstat](programs/netstat.md) - Network Statistics - Linux, macOS, Windows
+- [nettop](programs/nettop.md) - Network Monitoring - macOS
 - [nft](programs/nft.md) - Firewall - Linux (iptables successor)
 - [nikto](programs/nikto.md) - Web Vulnerability Scanner - Multi-platform
 - [nmap](programs/nmap.md) - Network Security Scanner - Multi-platform
@@ -111,6 +114,7 @@ This index provides a quick reference to all documented programs in the Unattend
 - [ping](programs/ping.md) - Network Testing - Multi-platform
 - [pip](programs/pip.md) - Package Manager (Python) - Multi-platform
 - [pnpm](programs/pnpm.md) - Package Manager (Node.js) - Multi-platform
+- [powertop](programs/powertop.md) - Power Monitoring - Linux
 - [PowerShell](programs/powershell.md) - Shell/Scripting - Windows, Linux, macOS
 - [promtool](programs/promtool.md) - Monitoring (Prometheus) - Multi-platform
 - [ps](programs/ps.md) - Process Status - Multi-platform
@@ -128,6 +132,7 @@ This index provides a quick reference to all documented programs in the Unattend
 - [screen](programs/screen.md) - Terminal Multiplexer - Multi-platform
 - [sed](programs/sed.md) - Stream Editor - Multi-platform
 - [smbpasswd / pdbedit](programs/smbpasswd.md) - Samba User Management - Linux, macOS
+- [slabtop](programs/slabtop.md) - System Monitoring (Kernel Slab Cache) - Linux
 - [sqlite3](programs/sqlite3.md) - Database Client (SQLite) - Multi-platform
 - [sqlmap](programs/sqlmap.md) - SQL Injection Scanner - Multi-platform
 - [ssh / scp / sftp](programs/ssh.md) - Remote Access - Multi-platform
@@ -142,6 +147,7 @@ This index provides a quick reference to all documented programs in the Unattend
 - [terraform](programs/terraform.md) - Infrastructure as Code - Multi-platform
 - [timeout](programs/timeout.md) - Process Control - Linux, macOS (gtimeout)
 - [tmux](programs/tmux.md) - Terminal Multiplexer - Multi-platform
+- [top](programs/top.md) - System Monitoring - Linux
 - [tr](programs/tr.md) - Text Translation - Multi-platform
 - [tshark](programs/tshark.md) - Network Packet Analysis - Multi-platform
 - [ufw](programs/ufw.md) - Firewall - Linux (Ubuntu/Debian)

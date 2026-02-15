@@ -4,8 +4,8 @@ This index provides a quick reference to all documented programs in the Unattend
 
 ## Overview
 
-- **Total Programs Documented:** 149
-- **Unique Categories:** 114
+- **Total Programs Documented:** 155
+- **Unique Categories:** 117
 - **Coverage:** Multi-platform command-line tools, development utilities, cloud CLIs, databases, networking tools, security scanners, monitoring systems, and more.
 
 ## By Category
@@ -111,6 +111,10 @@ This index provides a quick reference to all documented programs in the Unattend
 ### Cryptography/Security
 
 - [openssl](programs/openssl.md) - Multi-platform
+
+### Disk I/O Monitoring
+
+- [iotop](programs/iotop.md) - Linux
 
 ### DNS Lookup
 
@@ -289,6 +293,7 @@ This index provides a quick reference to all documented programs in the Unattend
 
 - [iftop](programs/iftop.md) - Linux
 - [nethogs](programs/nethogs.md) - Linux
+- [nettop](programs/nettop.md) - macOS
 
 ### Network Packet Analysis
 
@@ -387,6 +392,10 @@ This index provides a quick reference to all documented programs in the Unattend
 
 - [ps](programs/ps.md) - Multi-platform
 
+### Power Monitoring
+
+- [powertop](programs/powertop.md) - Linux
+
 ### Programming Language
 
 - [go](programs/go.md) - Multi-platform
@@ -441,9 +450,15 @@ This index provides a quick reference to all documented programs in the Unattend
 
 ### System Monitoring
 
+- [atop](programs/atop.md) - Linux
 - [dstat](programs/dstat.md) - Linux
 - [mpstat](programs/mpstat.md) - Linux
+- [top](programs/top.md) - Linux
 - [vmstat](programs/vmstat.md) - Multi-platform
+
+### System Monitoring (Kernel Slab Cache)
+
+- [slabtop](programs/slabtop.md) - Linux
 
 ### Terminal Multiplexer
 
