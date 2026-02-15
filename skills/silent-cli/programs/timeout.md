@@ -1,0 +1,28 @@
+# timeout
+
+**Platforms:** Linux, macOS (gtimeout)  
+**Category:** Process Control
+
+## Quick Reference
+
+| Goal | Command |
+|------|---------|
+| Kill after 30s | `timeout 30 command` |
+| Signal after 10s | `timeout -s KILL 10 command` |
+| Preserve exit code | `timeout --preserve-status 30 cmd` |
+
+## Command-Line Flags
+
+- `-s` or `--signal=SIGNAL`: Signal to send
+- `-k` or `--kill-after=DURATION`: SIGKILL delay after SIGTERM
+- `--preserve-status`: Exit with command's status (or 124 on timeout)
+- `-f` or `--foreground`: Run in foreground (when not in terminal)
+
+## Exit Codes
+
+- `124`: Command timed out
+- `125`: timeout command failed
+- `126`: Command found but cannot be invoked
+- `127`: Command not found
+- `137` (128+9): Command killed (SIGKILL)
+- Other: Command's exit status (with --preserve-status)
