@@ -4,8 +4,8 @@ This index provides a quick reference to all documented programs in the Unattend
 
 ## Overview
 
-- **Total Programs Documented:** 167
-- **Unique Categories:** 119
+- **Total Programs Documented:** 149
+- **Unique Categories:** 114
 - **Coverage:** Multi-platform command-line tools, development utilities, cloud CLIs, databases, networking tools, security scanners, monitoring systems, and more.
 
 ## Alphabetical Index
@@ -18,16 +18,12 @@ This index provides a quick reference to all documented programs in the Unattend
 - [ansible-vault](programs/ansible-vault.md) - Configuration Management (Secrets) - Multi-platform
 - [ant](programs/ant.md) - Java Build Tool - Multi-platform
 - [apt / apt-get / apt-cache](programs/apt.md) - Package Management - Linux (Debian, Ubuntu, and derivatives)
-- [awk](programs/awk.md) - Text Processing - Multi-platform
 - [aws](programs/aws.md) - Cloud (Amazon Web Services) - Multi-platform
 - [az](programs/az.md) - Cloud (Microsoft Azure) - Multi-platform
-- [base64](programs/base64.md) - Encoding - Multi-platform
 - [boundary](programs/boundary.md) - Identity-based Access - Multi-platform
 - [bundle](programs/bundle.md) - Dependency Manager (Ruby) - Multi-platform
 - [bzip2 / bunzip2 / bzcat](programs/bzip2.md) - Compression - Multi-platform
 - [cargo](programs/cargo.md) - Rust Package Manager - Multi-platform
-- [cat](programs/cat.md) - File Display - Multi-platform
-- [chmod / chown / chgrp](programs/chmod.md) - Permission Management - Multi-platform
 - [choco](programs/choco.md) - Package Manager - Windows
 - [circleci](programs/circleci.md) - CI/CD - Multi-platform
 - [cmake](programs/cmake.md) - Build System Generator - Multi-platform
@@ -36,9 +32,6 @@ This index provides a quick reference to all documented programs in the Unattend
 - [conda](programs/conda.md) - Package/Environment Manager - Multi-platform
 - [consul](programs/consul.md) - Service Discovery - Multi-platform
 - [curl](programs/curl.md) - Data Transfer - Multi-platform
-- [curl-loader](programs/curl-loader.md) - Load Testing - Linux
-- [cut](programs/cut.md) - Text Processing - Multi-platform
-- [date](programs/date.md) - Date/Time - Multi-platform
 - [diff](programs/diff.md) - File Comparison - Multi-platform
 - [dig / nslookup / host](programs/dig.md) - DNS Lookup - Multi-platform
 - [docker](programs/docker.md) - Container Runtime - Multi-platform
@@ -49,7 +42,6 @@ This index provides a quick reference to all documented programs in the Unattend
 - [elasticsearch](programs/elasticsearch.md) - Search Engine - Multi-platform
 - [filebeat](programs/filebeat.md) - Log Shipper - Multi-platform
 - [find](programs/find.md) - File Search - Multi-platform
-- [firewall-cmd](programs/firewall-cmd.md) - Firewall - Linux (firewalld)
 - [fluent-bit](programs/fluent-bit.md) - Log Processing - Multi-platform
 - [fly](programs/fly.md) - CI/CD - Multi-platform
 - [fuser](programs/fuser.md) - Process Identification - Linux, macOS
@@ -74,16 +66,12 @@ This index provides a quick reference to all documented programs in the Unattend
 - [hydra](programs/hydra.md) - Password Brute Forcer - Multi-platform
 - [iftop](programs/iftop.md) - Network Monitoring - Linux
 - [influx](programs/influx.md) - Time Series Database - Multi-platform
-- [iostat](programs/iostat.md) - System Monitoring - Multi-platform
 - [iperf / iperf3](programs/iperf.md) - Network Testing - Multi-platform
-- [iptables](programs/iptables.md) - Firewall - Linux
 - [jenkins-cli](programs/jenkins-cli.md) - CI/CD - Multi-platform
 - [john](programs/john.md) - Password Cracker - Multi-platform
 - [journalctl](programs/journalctl.md) - Log Viewer - Linux (systemd)
-- [jq](programs/jq.md) - JSON Processor - Multi-platform
 - [kafka-console-consumer](programs/kafka-console-consumer.md) - Message Queue (Apache Kafka) - Multi-platform
 - [kafka-console-producer](programs/kafka-console-producer.md) - Message Queue (Apache Kafka) - Multi-platform
-- [kafka-topics](programs/kafka-topics.md) - Message Queue (Apache Kafka) - Multi-platform
 - [kibana](programs/kibana.md) - Data Visualization - Multi-platform
 - [kill / killall / pkill](programs/kill.md) - Process Control - Multi-platform
 - [kind](programs/kind.md) - Local Kubernetes (Docker-based) - Multi-platform
@@ -137,20 +125,15 @@ This index provides a quick reference to all documented programs in the Unattend
 - [rustc](programs/rustc.md) - Rust Compiler - Multi-platform
 - [s3cmd](programs/s3cmd.md) - Cloud Storage (S3-compatible) - Multi-platform
 - [salt / salt-call / salt-ssh](programs/salt.md) - Configuration Management - Multi-platform
-- [sar](programs/sar.md) - System Monitoring - Linux
-- [sc](programs/sc.md) - Service Management - Windows
 - [screen](programs/screen.md) - Terminal Multiplexer - Multi-platform
 - [sed](programs/sed.md) - Stream Editor - Multi-platform
-- [sort](programs/sort.md) - Text Processing - Multi-platform
 - [smbpasswd / pdbedit](programs/smbpasswd.md) - Samba User Management - Linux, macOS
 - [sqlite3](programs/sqlite3.md) - Database Client (SQLite) - Multi-platform
 - [sqlmap](programs/sqlmap.md) - SQL Injection Scanner - Multi-platform
-- [ss](programs/ss.md) - Network Statistics - Linux
 - [ssh / scp / sftp](programs/ssh.md) - Remote Access - Multi-platform
 - [ssh-keygen](programs/ssh-keygen.md) - SSH Key Management - Multi-platform
 - [svn](programs/svn.md) - Version Control - Multi-platform
 - [systemctl](programs/systemctl.md) - Service Management - Linux (systemd)
-- [systemd-journald](programs/journald.md) - System Logging - Linux (systemd)
 - [tail](programs/tail.md) - Text Processing - Multi-platform
 - [tar](programs/tar.md) - Archiving - Multi-platform
 - [tcpdump](programs/tcpdump.md) - Network Packet Analysis - Multi-platform

@@ -7,44 +7,20 @@
 
 | Goal | Command |
 |------|---------|
-| Quick scan | `nmap -T4 -F target` |
-| Service scan | `nmap -sV target` |
-| Quiet | `nmap -T4 -F --open target` |
 | Output to file | `nmap -oN output.txt target` |
+| XML output | `nmap -oX output.xml target` |
 
 ## Command-Line Flags
 
 ```bash
-nmap -T4 -F target                   # Fast scan
-nmap -T4 -A target                   # Aggressive scan
-nmap -sV target                      # Service version detection
-nmap -sP 192.168.1.0/24              # Ping scan (host discovery)
-nmap -sn 192.168.1.0/24              # No port scan
-nmap -p 80,443 target                # Specific ports
-nmap -p- target                      # All ports
-nmap --top-ports 1000 target         # Top 1000 ports
-nmap -O target                       # OS detection
-nmap -sS target                      # SYN scan (root)
-nmap -sT target                      # TCP connect scan
-nmap -sU target                      # UDP scan
-nmap --script vuln target            # Vulnerability scan
-nmap -oN output.txt target           # Normal output
-nmap -oX output.xml target           # XML output
-nmap -oG output.grep target          # Grepable output
-nmap -v target                       # Verbose
-nmap -vv target                      # More verbose
-nmap -d target                       # Debug
-nmap --open target                   # Show open only
-nmap --reason target                 # Show reason
-nmap -n target                       # No DNS resolution
+nmap -oN output.txt target           # Normal output to file
+nmap -oX output.xml target           # XML output (machine-readable)
+nmap -oG output.grep target          # Grepable output (machine-readable)
+nmap --open target                   # Show open only (reduced output)
+nmap -n target                       # No DNS resolution (faster, non-interactive)
 ```
-- `-T<0-5>`: Timing template (higher is faster)
-- `-F`: Fast mode (fewer ports)
-- `-sV`: Service version detection
-- `-p`: Port specification
-- `-O`: OS detection
-- `-oN/-oX/-oG`: Output formats
-- `--open`: Show only open ports
+- `-oN/-oX/-oG`: Output formats (machine-readable)
+- `--open`: Show only open ports (reduced output)
 - `-n`: No DNS resolution
 
 ## Recommended Unattended Usage

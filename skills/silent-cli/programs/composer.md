@@ -8,37 +8,19 @@
 | Goal | Command |
 |------|---------|
 | Quiet install | `composer install -q` |
-| No dev | `composer install --no-dev` |
-| Silent | `composer install --quiet` |
+| No interaction | `composer install --no-interaction` |
+| No progress | `composer install --no-progress` |
 
 ## Environment Variables
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `COMPOSER_HOME` | `/path` | Composer home |
-| `COMPOSER_CACHE_DIR` | `/path` | Cache directory |
-| `COMPOSER_NO_INTERACTION` | `1` | No interaction |
+| `COMPOSER_NO_INTERACTION` | `1` | Disable all interactive prompts |
 
 ## Command-Line Flags
 
-```bash
-composer install -q                  # Quiet
-composer install --quiet             # Silent
-composer install --no-dev            # No dev dependencies
-composer install --no-interaction    # No prompts
-composer install --no-progress       # No progress bar
-composer install --optimize-autoloader
-composer update -q                   # Quiet update
-composer require package -q          # Add package quietly
-```
-- `-q` or `--quiet`: Quiet
-- `--no-dev`: Skip dev dependencies
-- `--no-interaction` or `-n`: No interaction
-- `--no-progress`: No progress
-- `--optimize-autoloader`: Optimize autoloader
-- `--classmap-authoritative`: Authoritative classmap
-- `--apcu-autoloader`: APCu autoloader
-- `--prefer-dist`: Prefer dist packages
-- `--prefer-source`: Prefer source
-- `--no-scripts`: Skip scripts
-- `--no-plugins`: Disable plugins
+- `-q` or `--quiet`: Quiet mode — suppress output
+- `--no-interaction` or `-n`: No interactive prompts
+- `--no-progress`: No progress bar display
+- `--no-scripts`: Skip execution of scripts (avoids potential interactive scripts)
+- `--no-plugins`: Disable plugins (avoids potential interactive plugins)

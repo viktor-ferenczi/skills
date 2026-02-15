@@ -9,34 +9,26 @@
 |------|---------|
 | Silent download | `curl -fsSL -o file url` |
 | Quiet with errors | `curl -fsSL url` |
-| Check URL | `curl -fsSL -o /dev/null -w '%{http_code}' url` |
-
-## Environment Variables
-
-| Variable | Value | Description |
-|----------|-------|-------------|
-| `CURL_CA_BUNDLE` | `/path/to/ca.crt` | CA certificates |
-| `HTTP_PROXY` | `http://proxy:port` | HTTP proxy |
-| `HTTPS_PROXY` | `http://proxy:port` | HTTPS proxy |
+| Check URL (no output) | `curl -fsSL -o /dev/null -w '%{http_code}' url` |
 
 ## Command-Line Flags
 
+- `-f` or `--fail`: Fail silently on HTTP errors (no error page output)
+- `-s` or `--silent`: Silent mode (no progress meter or error messages)
+- `-S` or `--show-error`: Show errors even when in silent mode (use with `-s`)
+- `-o` or `--output`: Write output to file instead of stdout
+- `--connect-timeout`: Connection timeout (prevents hanging in scripts)
+- `--max-time`: Maximum time for the whole operation
+- `--retry`: Number of retries on transient errors
+
+## Recommended Unattended Usage
+
 ```bash
-curl -fsSL -o file https://example.com/file    # Silent download
-curl -fsSL https://example.com/api | jq .      # API call
-curl -I -fsSL https://example.com              # Headers only
-curl -fsSL -H "Authorization: Bearer $TOKEN" url
+#!/bin/bash
+
+# Silent download with error handling and timeout
+curl -fsSL --connect-timeout 10 --max-time 60 --retry 3 -o file.tar.gz https://example.com/file.tar.gz
+
+# API call with silent output piped to jq
+result=$(curl -fsSL -H "Authorization: Bearer $TOKEN" https://api.example.com/data)
 ```
-- `-f` or `--fail`: Fail on HTTP error
-- `-s` or `--silent`: Silent mode
-- `-S` or `--show-error`: Show errors with -s
-- `-L` or `--location`: Follow redirects
-- `-o` or `--output`: Write to file
-- `-I` or `--head`: Headers only
-- `-H` or `--header`: Custom headers
-- `-X` or `--request`: HTTP method
-- `-d` or `--data`: POST data
-- `-k` or `--insecure`: Skip SSL verify
-- `--connect-timeout`: Connection timeout
-- `--max-time`: Max operation time
-- `--retry`: Number of retries

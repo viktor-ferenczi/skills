@@ -7,24 +7,9 @@
 
 | Goal | Command |
 |------|---------|
-| Check config | `amtool check-config alertmanager.yml` |
-| Test routes | `amtool config routes test --label=alertname=test` |
-| Silence | `amtool silence add alertname=Test` |
+| Machine-readable output | `amtool --output json silence list` |
 
 ## Command-Line Flags
 
-```bash
-amtool check-config alertmanager.yml
-amtool check-config alertmanager.yml --verbose
-amtool config routes test --label=alertname=Test
-amtool silence add alertname=Test --duration=1h
-amtool silence add alertname=Test --author="user" --comment="maintenance"
-amtool silence expire silence-id
-amtool silence list
-amtool silence query alertname=Test
-```
-- `--alertmanager.url`: Alertmanager URL
-- `--output`: Output format (simple, extended, json)
-- `--duration`: Silence duration
-- `--author`: Silence author
-- `--comment`: Silence comment
+- `--output`: Output format (`simple`, `extended`, `json`) — use `json` for machine-readable output in scripts
+- `--alertmanager.url`: Alertmanager URL (avoids interactive discovery)

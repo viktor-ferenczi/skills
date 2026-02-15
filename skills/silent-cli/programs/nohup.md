@@ -9,7 +9,6 @@
 |------|---------|
 | Run detached | `nohup command &` |
 | Output to file | `nohup command > output.log 2>&1 &` |
-| Ignore hangup | `nohup long-running-task` |
 
 ## Command-Line Flags
 
@@ -17,8 +16,6 @@
 nohup command                        # Ignore HUP signal
 nohup command &                      # Run in background
 nohup command > output.log 2>&1 &    # Redirect output, background
-nohup command &
-disown                               # Alternative approach
 ```
 
 ## Output Redirection

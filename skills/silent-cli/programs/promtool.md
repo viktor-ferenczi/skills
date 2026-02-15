@@ -3,27 +3,13 @@
 **Platforms:** Multi-platform  
 **Category:** Monitoring (Prometheus)
 
-## Quick Reference
-
-| Goal | Command |
-|------|---------|
-| Check config | `promtool check config prometheus.yml` |
-| Check rules | `promtool check rules rules.yml` |
-| Test rules | `promtool test rules test.yml` |
-
-## Command-Line Flags
+## Recommended Unattended Usage
 
 ```bash
-promtool check config prometheus.yml
-promtool check rules /path/to/rules/*.yml
-promtool check webconfig web.yml
-promtool test rules test.yml         # Unit tests
-promtool query instant http://localhost:9090 'up'
-promtool query range --start=-5m http://localhost:9090 'up'
+#!/bin/bash
+
+# Validate config and rules (non-interactive, exit code based)
+promtool check config prometheus.yml || exit 1
+promtool check rules /path/to/rules/*.yml || exit 1
+promtool test rules test.yml || exit 1
 ```
-- `check config`: Validate config file
-- `check rules`: Validate recording/alerting rules
-- `check webconfig`: Validate web config
-- `test rules`: Run rule unit tests
-- `query instant`: Instant query
-- `query range`: Range query

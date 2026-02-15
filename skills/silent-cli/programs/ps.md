@@ -7,26 +7,12 @@
 
 | Goal | Command |
 |------|---------|
-| All processes | `ps aux` |
-| Specific format | `ps -eo pid,ppid,cmd` |
-| No header | `ps --no-headers` |
-
-## Environment Variables
-
-| Variable | Value | Description |
-|----------|-------|-------------|
-| `PS_PERSONALITY` | `linux` | Set personality |
+| No header | `ps --no-headers -eo pid,ppid,cmd` |
 
 ## Command-Line Flags
 
 ```bash
-ps aux                                  # BSD format
-ps -ef                                  # Standard format
-ps -eo pid,ppid,cmd --no-headers        # Custom format, no headers
-ps aux | grep [p]attern                 # Filter processes
+ps -eo pid,ppid,cmd --no-headers        # Custom format, no headers (machine-readable)
 ```
-- `aux`: BSD format, all users
-- `-ef`: Full format
-- `-e`: All processes
-- `-o`: User-defined format
-- `--no-headers`: No header line
+- `--no-headers`: No header line (machine-readable output)
+- `-o`: User-defined format (machine-readable)

@@ -9,9 +9,6 @@
 |------|---------|
 | Set SMB password non-interactively | `echo -e 'newpass\nnewpass' \| smbpasswd -s user` |
 | Add user silently | `echo -e 'newpass\nnewpass' \| smbpasswd -s -a user` |
-| Disable user | `smbpasswd -d user` |
-| Enable user | `smbpasswd -e user` |
-| Delete user | `smbpasswd -x user` |
 
 ## Command-Line Flags
 
@@ -22,13 +19,16 @@ smbpasswd -d user                  # Disable user (no prompt)
 smbpasswd -e user                  # Enable user (no prompt)
 smbpasswd -x user                  # Delete user (no prompt)
 smbpasswd -n user                  # Set null password (no prompt)
-smbpasswd -r server -U user        # Change password on remote server
 smbpasswd -s -r server -U user     # Remote change, silent mode
 ```
+- `-s`: Silent mode — reads password from stdin instead of prompting on terminal
+- `-a`: Add user (combined with `-s` for non-interactive)
+- `-d`: Disable user (no prompt needed)
+- `-e`: Enable user (no prompt needed)
+- `-x`: Delete user (no prompt needed)
+- `-n`: Set null password (no prompt needed)
 
 ## Non-Interactive Password Setting
-
-### Using the -s (silent/stdin) Flag
 
 The `-s` flag is the standard way to use `smbpasswd` non-interactively.
 It reads the new password from stdin instead of prompting.
@@ -46,19 +46,6 @@ printf '%s\n%s\n' "$SMB_PASS" "$SMB_PASS" | smbpasswd -s -a username
 
 # Change password on a remote Samba server
 printf '%s\n%s\n%s\n' "$OLD_PASS" "$NEW_PASS" "$NEW_PASS" | smbpasswd -s -r server -U username
-```
-
-### Using pdbedit (Alternative)
-
-```bash
-# Import user with password hash directly
-pdbedit -a -u username -t <<'EOF'
-password_nt_hash
-password_lanman_hash
-EOF
-
-# Set password from file using pdbedit
-printf '%s\n%s\n' "$SMB_PASS" "$SMB_PASS" | pdbedit -a -u username -t
 ```
 
 ## Recommended Unattended Usage

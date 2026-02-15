@@ -10,37 +10,22 @@
 | Quiet build | `docker build -q -t image .` |
 | Silent run | `docker run -d --rm image` |
 | No progress | `docker pull -q image` |
+| Force prune (no prompt) | `docker system prune -f` |
 
 ## Environment Variables
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `DOCKER_BUILDKIT` | `1` | Use BuildKit |
-| `BUILDKIT_PROGRESS` | `plain` | Plain progress |
-| `DOCKER_CLI_EXPERIMENTAL` | `enabled` | Enable experimental |
+| `BUILDKIT_PROGRESS` | `plain` | Plain progress output (no fancy TUI) |
+| `DOCKER_BUILDKIT` | `1` | Use BuildKit (supports `--progress`) |
 
 ## Command-Line Flags
 
-```bash
-docker build -q -t image .           # Quiet build
-docker build --quiet -t image .      # Same
-docker build --progress=plain -t image .  # Plain progress
-docker pull -q image                 # Quiet pull
-docker push -q image                 # Quiet push
-docker run -d --rm image             # Detached, auto-remove
-docker run --log-driver none image   # No logging
-docker images -q                     # Quiet list (IDs only)
-docker ps -q                         # Quiet list
-docker rm -f container               # Force remove
-docker system prune -f               # Force prune
-```
-- `-q` or `--quiet`: Quiet (image ID only)
-- `--quiet`: Suppress build output
-- `--progress=auto|plain|tty`: Progress output
-- `-d` or `--detach`: Run in background
-- `--rm`: Auto-remove on stop
-- `--log-driver`: Logging driver
-- `-f` or `--force`: Force
+- `-q` or `--quiet`: Suppress output (returns image ID only for build, IDs only for list)
+- `--progress=auto|plain|tty`: Control progress output type (`plain` for CI/scripts)
+- `-d` or `--detach`: Run container in background (non-interactive)
+- `--rm`: Auto-remove container on exit
+- `-f` or `--force`: Force removal/prune without confirmation prompt
 
 ## Recommended Unattended Usage
 

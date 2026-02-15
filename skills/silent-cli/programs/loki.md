@@ -7,30 +7,21 @@
 
 | Goal | Command |
 |------|---------|
-| Query logs | `logcli query '{job="myjob"}'` |
-| Non-interactive | `logcli query --output=jsonl '...'` |
-| Stream labels | `logcli labels` |
-
-## Environment Variables
-
-| Variable | Value | Description |
-|----------|-------|-------------|
-| `LOKI_ADDR` | `http://localhost:3100` | Loki address |
-| `LOKI_ORG_ID` | `tenant1` | Tenant ID |
+| Machine-readable output | `logcli query --output=jsonl '{job="myjob"}'` |
 
 ## Command-Line Flags
 
+- `--output`: Output format (`default`, `jsonl`) — use `jsonl` for machine-readable output
+- `--quiet`: Suppress query metadata, print only log lines
+
+## Recommended Unattended Usage
+
 ```bash
-logcli query '{job="varlogs"}'       # Query logs
-logcli query --since=1h '{job="app"}' # Last hour
-logcli query --output=jsonl '{job="app"}' # JSON lines
-logcli labels                        # List labels
-logcli labels job                    # Label values
-logcli series '{job="app"}'          # List series
+#!/bin/bash
+
+# Query logs with JSON lines output for processing
+logcli query --output=jsonl --since=1h '{job="app"}'
+
+# Quiet output for piping
+logcli query --quiet '{job="app"}' > logs.txt
 ```
-- `--since`: Relative start time
-- `--from`: Absolute start time
-- `--to`: Absolute end time
-- `--limit`: Limit results
-- `--output`: Output format (default, jsonl)
-- `--tail`: Tail mode

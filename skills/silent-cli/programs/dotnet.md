@@ -8,15 +8,14 @@
 | Goal | Command |
 |------|---------|
 | Build (errors only) | `dotnet build -v quiet` |
-| Build (minimal) | `dotnet build -v minimal` |
-| No color | `dotnet build --nologo -v quiet` |
-| Restore silently | `dotnet restore -v quiet` |
+| No logo/banner | `dotnet build --nologo -v quiet` |
+| Quiet test | `dotnet test -v quiet --nologo --logger "console;verbosity=minimal"` |
 
 ## Environment Variables
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `DOTNET_CLI_TELEMETRY_OPTOUT` | `1` | Disable telemetry |
+| `DOTNET_CLI_TELEMETRY_OPTOUT` | `1` | Disable telemetry (avoids first-run message) |
 | `DOTNET_NOLOGO` | `true` | Suppress logo and telemetry message |
 | `DOTNET_SKIP_FIRST_TIME_EXPERIENCE` | `true` | Skip first-run experience (SDK < 6) |
 | `NO_COLOR` | `1` | Disable colored output |
@@ -25,41 +24,9 @@
 
 ## Command-Line Flags
 
-```bash
-dotnet build                         # Build project
-dotnet build -v quiet                # Errors only (quiet verbosity)
-dotnet build -v minimal              # Minimal output
-dotnet build -v normal               # Normal output (default)
-dotnet build -v detailed             # Detailed output
-dotnet build -v diagnostic           # Diagnostic output
-dotnet build --nologo                # Suppress startup banner
-dotnet build -c Release              # Release configuration
-dotnet build --no-restore            # Skip restore
-dotnet build --no-incremental        # Full rebuild
-dotnet build -nowarn:CS0168          # Suppress specific warning
-dotnet build -warnaserror            # Treat warnings as errors
-dotnet restore                       # Restore NuGet packages
-dotnet restore -v quiet              # Quiet restore
-dotnet restore --no-cache            # Skip HTTP cache
-dotnet publish -c Release            # Publish for deployment
-dotnet publish -v quiet              # Quiet publish
-dotnet test                          # Run tests
-dotnet test -v quiet                 # Quiet test output
-dotnet test --no-build               # Skip build
-dotnet test --logger "console;verbosity=minimal"  # Minimal test logger
-dotnet run                           # Run project
-dotnet clean                         # Clean build output
-dotnet pack                          # Create NuGet package
-dotnet pack -v quiet                 # Quiet pack
-```
-- `-v` or `--verbosity`: Verbosity level (quiet, minimal, normal, detailed, diagnostic)
+- `-v` or `--verbosity`: Verbosity level (`quiet`, `minimal`, `normal`, `detailed`, `diagnostic`) — use `quiet` for errors only
 - `--nologo`: Suppress startup banner
-- `-c` or `--configuration`: Build configuration (Debug, Release)
-- `--no-restore`: Skip automatic restore
-- `--no-build`: Skip build (for test/run)
-- `-nowarn`: Suppress specific warnings
-- `-warnaserror`: Treat warnings as errors
-- `--logger`: Test logger configuration
+- `--logger`: Test logger configuration (use `"console;verbosity=minimal"` for minimal test output)
 
 ## Recommended Unattended Usage
 

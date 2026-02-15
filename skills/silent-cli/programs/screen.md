@@ -8,28 +8,15 @@
 | Goal | Command |
 |------|---------|
 | Detached session | `screen -dmS name command` |
-| List sessions | `screen -ls` |
-| Reattach | `screen -r name` |
+| Send command to session | `screen -S name -X stuff "command\n"` |
+| Kill session | `screen -S name -X quit` |
 
 ## Command-Line Flags
 
-```bash
-screen -dmS session_name             # Create detached session
-screen -dmS session_name command     # Create detached with command
-screen -ls                           # List sessions
-screen -r session_name               # Reattach
-screen -rD session_name              # Reattach, detach others
-screen -S session_name -X quit       # Kill session
-screen -S session_name -X stuff "command
-"  # Send command
-```
-- `-d`: Detach
-- `-m`: Ignore $STY (force new session)
+- `-d`: Detach session
+- `-m`: Force new session (ignore $STY)
 - `-S`: Session name
-- `-r`: Reattach
-- `-D`: Power detach (detach + logout)
-- `-X`: Execute command
-- `-ls`: List sessions
+- `-X`: Execute command in session (non-interactive control)
 
 ## Recommended Unattended Usage
 

@@ -9,34 +9,19 @@
 |------|---------|
 | Silent install | `yarn install --silent` |
 | No progress | `yarn install --no-progress` |
-| Production | `yarn install --production` |
 
 ## Environment Variables
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `CI` | `true` | CI mode (reduces output) |
+| `CI` | `true` | CI mode (reduces output, disables interactive prompts) |
 
 ## Command-Line Flags
 
-```bash
-yarn install --silent                # Silent
-yarn install --no-progress           # No progress
-yarn install --production            # Prod deps only
-yarn add --silent package            # Add silently
-yarn remove --silent package         # Remove silently
-yarn run --silent build              # Run silently
-yarn test --silent                   # Test silently
-yarn global add --silent package     # Global install
-yarn upgrade --silent                # Upgrade silently
-```
-- `--silent`: Silent
-- `--no-progress`: No progress
-- `--production`: Production deps only
-- `--frozen-lockfile`: Fail if lockfile needs update
-- `--ignore-engines`: Ignore engine checks
-- `--offline`: Offline mode
-- `--check-files`: Verify file integrity
+- `--silent`: Silent mode (suppress all output)
+- `--no-progress`: Disable progress bar
+- `--frozen-lockfile`: Fail if lockfile needs update (avoids interactive prompts)
+- `--non-interactive`: Disable interactive prompts
 
 ## Recommended Unattended Usage
 

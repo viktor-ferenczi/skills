@@ -8,26 +8,17 @@
 | Goal | Command |
 |------|---------|
 | Quiet install | `pacman -S --needed --noprogressbar -q package` |
-| Update quietly | `pacman -Syu --noprogressbar -q` |
-| Clean cache | `pacman -Sc` |
+| Quiet update | `pacman -Syu --noprogressbar -q` |
 
 > **WARNING:** `--noconfirm` skips all confirmation prompts, including safety-critical ones
 > (e.g. removing conflicting packages, replacing packages). This is a security-sensitive
 > flag. **Confirm with the human operator before using `--noconfirm`.**
-
-## Environment Variables
-
-| Variable | Value | Description |
-|----------|-------|-------------|
-| `MAKEFLAGS` | `-j4` | Parallel compilation |
 
 ## Command-Line Flags
 
 ```bash
 pacman -S --needed --noprogressbar -q package  # Quiet install
 pacman -Syu --noprogressbar -q                 # Quiet update
-pacman -R package                              # Remove
-pacman -Sc                                     # Clean cache
 # Use --noconfirm only with human operator approval:
 pacman -S --noconfirm --needed --noprogressbar package
 pacman -Syu --noconfirm --noprogressbar
@@ -42,5 +33,4 @@ pacman -Syu --noconfirm --noprogressbar
 ```ini
 [options]
 Color = never
-ILoveCandy = false
 ```

@@ -7,9 +7,9 @@
 
 | Goal | Command |
 |------|---------|
-| Non-interactive | `powershell -Command 'script'` |
+| Non-interactive | `powershell -NonInteractive -Command '...'` |
 | Silent | `powershell -WindowStyle Hidden -Command '...'` |
-| File execution | `powershell -File script.ps1` |
+| No profile | `powershell -NoProfile -Command '...'` |
 
 ## Preference Variables (set inside scripts, not OS env vars)
 
@@ -22,20 +22,17 @@
 ## Command-Line Flags
 
 ```powershell
-powershell -Command "Get-Process"               # Execute command
-powershell -File script.ps1                     # Execute script
+powershell -NonInteractive -Command "..."       # Non-interactive
 powershell -WindowStyle Hidden -Command "..."   # Hidden window
 powershell -NoProfile -Command "..."            # Skip profile
-powershell -NonInteractive -Command "..."       # Non-interactive
-powershell -ExecutionPolicy Bypass -File script.ps1
+powershell -NoLogo -Command "..."               # Hide copyright banner
+powershell -ExecutionPolicy Bypass -File script.ps1  # Bypass execution policy
 ```
-- `-Command`: Execute command
-- `-File`: Execute script file
+- `-NonInteractive`: Non-interactive
 - `-WindowStyle Hidden`: Hide window
 - `-NoProfile`: Don't load profile
-- `-NonInteractive`: Non-interactive
-- `-ExecutionPolicy`: Set execution policy
 - `-NoLogo`: Hide copyright banner
+- `-ExecutionPolicy`: Set execution policy (Bypass for unattended)
 
 ## Recommended Unattended Usage
 

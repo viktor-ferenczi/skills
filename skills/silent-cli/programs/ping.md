@@ -7,33 +7,26 @@
 
 | Goal | Command |
 |------|---------|
-| Count test | `ping -c 4 host` |
-| Quick check | `ping -c 1 -W 2 host` |
 | Quiet | `ping -c 4 -q host` |
 | Silent check | `ping -c 1 host > /dev/null 2>&1` |
 
 ## Command-Line Flags
 
-```bash
-ping -c 4 host                       # 4 packets (Linux/macOS)
-ping -n 4 host                       # 4 packets (Windows)
-ping -c 1 -W 2 host                  # 1 packet, 2s timeout
-ping -c 4 -q host                    # Quiet summary only
-```
-
 ### Linux/macOS
-- `-c count`: Number of packets
+```bash
+ping -c 4 -q host                    # Quiet summary only
+ping -c 1 -W 2 host                  # 1 packet, 2s timeout (auto-exit)
+```
+- `-c count`: Number of packets (required for non-interactive use)
 - `-W timeout`: Timeout in seconds
-- `-i interval`: Interval between packets
 - `-q`: Quiet output
-- `-s size`: Packet size
-- `-t ttl`: Time to live
 
 ### Windows
-- `-n count`: Number of packets
+```bash
+ping -n 4 host                       # Fixed count (auto-exit)
+```
+- `-n count`: Number of packets (required for non-interactive use)
 - `-w timeout`: Timeout in milliseconds
-- `-l size`: Packet size
-- `-i ttl`: Time to live
 
 ## Recommended Unattended Usage
 

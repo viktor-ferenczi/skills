@@ -8,33 +8,13 @@
 | Goal | Command |
 |------|---------|
 | Silent install | `gem install -q package` |
-| No docs | `gem install --no-document package` |
-| Batch | `gem install --conservative package` |
-
-## Environment Variables
-
-| Variable | Value | Description |
-|----------|-------|-------------|
-| `GEM_HOME` | `/path` | Gem installation path |
-| `GEM_PATH` | `/path` | Gem search path |
+| No docs (faster, less output) | `gem install --no-document package` |
+| Quiet update | `gem update -q` |
 
 ## Command-Line Flags
 
-```bash
-gem install package -q               # Quiet
-gem install package --no-document    # Skip docs (faster)
-gem install package --conservative   # Don't upgrade deps
-gem uninstall package -a -x          # All versions, executables
-gem list -q                          # Quiet list
-gem update --system -q               # Update system quietly
-gem update -q                        # Update gems quietly
-```
-- `-q` or `--quiet`: Quiet
-- `--no-document`: Skip documentation
-- `--conservative`: Don't update deps
-- `-v` or `--version`: Specific version
-- `-a` or `--all`: All versions
-- `-x` or `--executables`: Remove executables
+- `-q` or `--quiet`: Suppress informational output
+- `--no-document`: Skip documentation generation (reduces output and speeds up installs)
 
 ## ~/.gemrc
 
@@ -42,3 +22,5 @@ gem update -q                        # Update gems quietly
 ---
 gem: --no-document
 ```
+
+Setting `--no-document` in `.gemrc` ensures all gem installs are quieter by default in automated environments.

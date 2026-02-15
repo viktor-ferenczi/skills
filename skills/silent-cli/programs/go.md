@@ -7,48 +7,19 @@
 
 | Goal | Command |
 |------|---------|
-| Build | `go build -o app` |
-| Test | `go test ./...` |
-| Silent | `go build -ldflags="-s -w"` |
-| JSON output | `go test -json ./...` |
+| JSON test output | `go test -json ./...` |
 
 ## Environment Variables
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `GO111MODULE` | `on` | Enable modules |
-| `GOPROXY` | `https://proxy.golang.org` | Module proxy |
-| `CGO_ENABLED` | `0` | Disable CGO |
+| `GOFLAGS` | `-json` | Default flags (can set JSON output globally) |
 
 ## Command-Line Flags
 
-```bash
-go build                             # Build current package
-go build -o app                      # Output binary
-go build -v                          # Verbose
-go build -x                          # Print commands
-go build -ldflags="-s -w"            # Strip symbols (smaller)
-go test ./...                        # Run tests
-go test -v ./...                     # Verbose tests
-go test -json ./...                  # JSON output
-go test -cover ./...                 # With coverage
-go test -race ./...                  # Race detector
-go get -u package                    # Update package
-go mod download                      # Download modules
-go mod tidy                          # Clean up modules
-go mod verify                        # Verify modules
-go fmt ./...                         # Format code
-go vet ./...                         # Vet code
-go generate ./...                    # Run generators
-```
-- `-o`: Output file
-- `-v`: Verbose
-- `-x`: Print commands
-- `-ldflags`: Linker flags (`-s` strip, `-w` no DWARF)
-- `-u`: Update
-- `-json`: JSON output (test)
-- `-cover`: Coverage
-- `-race`: Race detector
+- `-json`: JSON output for test results (machine-readable, suitable for CI parsing)
+
+`go` build tools are inherently non-interactive. The main concern for unattended use is producing machine-readable output from `go test` via `-json`.
 
 ## Recommended Unattended Usage
 

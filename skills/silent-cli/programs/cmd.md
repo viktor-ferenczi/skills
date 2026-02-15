@@ -8,24 +8,14 @@
 | Goal | Command |
 |------|---------|
 | Execute and exit | `cmd /c command` |
-| Execute and stay | `cmd /k command` |
-| Silent | `cmd /c command >nul 2>&1` |
+| Silent (discard output) | `cmd /c command >nul 2>&1` |
+| Quiet (echo off) | `cmd /q /c command` |
 
 ## Command-Line Flags
 
-```batch
-cmd /c dir                           # Execute and close
-cmd /k dir                           # Execute and stay
-cmd /c "echo hello && echo world"    # Multiple commands
-cmd /c command >nul 2>&1             # Silent (discard output)
-cmd /q /c command                    # Echo off (quiet)
-cmd /v:on /c command                 # Delayed expansion on
-```
-- `/c`: Execute and terminate
-- `/k`: Execute and remain
-- `/q`: Turn echo off (quiet)
-- `/v:on`: Enable delayed variable expansion
-- `/s`: Strip first and last quote
+- `/c`: Execute command and terminate (non-interactive)
+- `/q`: Turn echo off (quiet mode)
+- `>nul 2>&1`: Redirect all output to null (silent)
 
 ## Batch File Silent Mode
 

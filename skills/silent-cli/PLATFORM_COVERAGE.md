@@ -1,21 +1,16 @@
 # Platform Coverage
 
-- **Multi-platform:** 136 programs
-- **Linux:** 18 programs
-- **Windows:** 5 programs
-- **macOS:** 7 programs
-- **Linux (systemd):** 3 programs
-- **Linux (Debian:** 1 programs
-- **Ubuntu:** 1 programs
-- **and derivatives):** 1 programs
-- **Linux (firewalld):** 1 programs
-- **Linux (iptables successor):** 1 programs
-- **Linux (Arch:** 1 programs
-- **Manjaro):** 1 programs
-- **macOS (gtimeout):** 1 programs
-- **Linux (Ubuntu/Debian):** 1 programs
-- **Windows 10/11:** 1 programs
-- **Linux (RHEL:** 1 programs
-- **CentOS:** 1 programs
-- **Fedora:** 1 programs
-- **Amazon Linux):** 1 programs
+- **Multi-platform:** 125 programs
+- **Linux:** 6 programs
+- **Linux, macOS:** 5 programs
+- **Windows:** 2 programs
+- **Linux (systemd):** 2 programs
+- **Windows, Linux, macOS:** 1 program
+- **Windows 10/11:** 1 program
+- **Linux, macOS, Windows:** 1 program
+- **Linux, macOS (gtimeout):** 1 program
+- **Linux (iptables successor):** 1 program
+- **Linux (Ubuntu/Debian):** 1 program
+- **Linux (RHEL, CentOS, Fedora, Amazon Linux):** 1 program
+- **Linux (Debian, Ubuntu, and derivatives):** 1 program
+- **Linux (Arch, Manjaro):** 1 program

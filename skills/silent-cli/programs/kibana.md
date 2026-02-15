@@ -7,35 +7,13 @@
 
 | Goal | Command |
 |------|---------|
-| Start | `kibana` |
-| Config test | `kibana --configtest` |
-| Optimize | `kibana --optimize` |
+| Silent logging | `kibana --logging.silent` |
+| Quiet logging | `kibana --logging.quiet` |
 
 ## Command-Line Flags
 
-```bash
-kibana                               # Start Kibana
-kibana --configtest                  # Validate config
-kibana --config /path/to/kibana.yml  # Custom config
-kibana --dev                         # Development mode
-kibana --no-optimize                 # Skip optimization
-kibana --optimize                    # Force optimization
-kibana --elasticsearch.hosts http://es:9200
-kibana --server.host 0.0.0.0
-kibana --server.port 5601
-kibana --logging.verbose             # Verbose logging
-kibana --logging.silent              # Silent logging
-kibana --logging.quiet               # Quiet logging
-```
-- `--configtest`: Validate configuration
-- `--config`: Config file path
-- `--dev`: Development mode
-- `--optimize`: Force optimization
-- `--no-optimize`: Skip optimization
-- `--elasticsearch.hosts`: ES hosts
-- `--server.host`: Server host
-- `--server.port`: Server port
-- `--logging.verbose/silent/quiet`: Logging control
+- `--logging.silent`: Suppress all logging output
+- `--logging.quiet`: Quiet logging (errors only)
 
 ## Recommended Unattended Usage
 

@@ -7,29 +7,19 @@
 
 | Goal | Command |
 |------|---------|
-| Test port | `nc -zv host port` |
-| Listen | `nc -l -p port` |
-| Transfer file | `nc -q 0 host port < file` |
+| Silent port test | `nc -z -w 5 host port` |
+| Auto-quit | `nc -q 0 host port < file` |
 
 ## Command-Line Flags
 
 ```bash
-nc -zv host 22                       # Check if port 22 is open
-nc -zv host 1-1000                   # Scan ports 1-1000
-nc -l -p 1234                        # Listen on port 1234
-nc -q 0 host 1234 < file             # Send file
-nc -w 3 host 80                      # Timeout after 3s
+nc -z host 22                        # Zero-I/O mode (scan only, no interactive)
+nc -w 3 host 80                      # Timeout after 3s (auto-exit)
+nc -q 0 host 1234 < file             # Quit after EOF
 ```
-
-### Common Options
-- `-z`: Zero-I/O mode (scanning)
-- `-v`: Verbose
-- `-l`: Listen mode
-- `-p port`: Local port
-- `-w timeout`: Timeout
+- `-z`: Zero-I/O mode (scanning, non-interactive)
+- `-w timeout`: Timeout (auto-exit)
 - `-q seconds`: Quit after EOF
-- `-u`: UDP mode
-- `-k`: Keep listening (after disconnect)
 
 ## Recommended Unattended Usage
 

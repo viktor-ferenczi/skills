@@ -7,31 +7,20 @@
 
 | Goal | Command |
 |------|---------|
-| Create cluster | `kind create cluster` |
-| Quiet | `kind create cluster -q` |
-| From config | `kind create cluster --config config.yaml` |
-
-## Environment Variables
-
-| Variable | Value | Description |
-|----------|-------|-------------|
-| `KIND_EXPERIMENTAL_PROVIDER` | `podman` | Use alternative provider |
+| Quiet create | `kind create cluster -q` |
 
 ## Command-Line Flags
 
+- `-q` or `--quiet`: Quiet output (suppress progress)
+
+## Recommended Unattended Usage
+
 ```bash
-kind create cluster                  # Create cluster
-kind create cluster -q               # Quiet
-kind create cluster --name mycluster
-kind create cluster --config kind.yaml
-kind delete cluster                  # Delete
-kind delete cluster --name mycluster
-kind get clusters                    # List clusters
-kind get nodes                       # List nodes
-kind load docker-image myimage:tag   # Load image
-kind export kubeconfig               # Export config
+#!/bin/bash
+
+# Create cluster quietly from config
+kind create cluster -q --name mycluster --config kind.yaml
+
+# Delete cluster quietly
+kind delete cluster -q --name mycluster
 ```
-- `-q` or `--quiet`: Quiet
-- `--name`: Cluster name
-- `--config`: Config file
-- `--image`: Node image

@@ -7,35 +7,24 @@
 
 | Goal | Command |
 |------|---------|
-| Detached | `docker-compose up -d` |
+| Detached (background) | `docker-compose up -d` |
 | Quiet pull | `docker-compose pull -q` |
 | No color | `docker-compose --no-ansi up` |
-
-## Environment Variables
-
-| Variable | Value | Description |
-|----------|-------|-------------|
-| `COMPOSE_PARALLEL_LIMIT` | `4` | Parallel limit |
-| `COMPOSE_PROJECT_NAME` | `myproject` | Project name |
-| `COMPOSE_FILE` | `docker-compose.yml` | Compose file |
+| Quiet build | `docker-compose build -q` |
 
 ## Command-Line Flags
 
+- `-d` or `--detach`: Detached mode (run in background, no interactive output)
+- `-q` or `--quiet`: Suppress pull/build output
+- `--no-color`: Disable color output
+- `--quiet-pull`: Suppress progress output during image pulls
+
+## Recommended Unattended Usage
+
 ```bash
-docker-compose up -d                 # Detached
-docker-compose up -d --quiet-pull    # Quiet image pulls
-docker-compose up -d --no-color      # No color
-docker-compose build -q              # Quiet build
-docker-compose pull -q               # Quiet pull
-docker-compose ps                    # List containers
-docker-compose logs -f               # Follow logs
-docker-compose down                  # Stop and remove
-docker-compose down -v               # Remove volumes too
+#!/bin/bash
+
+# Pull and start in background, no progress output
+docker-compose pull -q
+docker-compose up -d --quiet-pull --no-color
 ```
-- `-d` or `--detach`: Detached mode
-- `-q` or `--quiet`: Quiet
-- `--no-color`: No color
-- `--quiet-pull`: No progress on pull
-- `-f` or `--file`: Compose file
-- `-p` or `--project-name`: Project name
-- `-v`: Remove volumes (with down)

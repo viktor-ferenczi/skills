@@ -11,49 +11,18 @@
 | Quiet update | `dnf update -y -q` |
 | Minimal install | `microdnf install -y package` |
 
-## Environment Variables
-
-*No specific environment variables for yum/dnf silent mode. Use CLI flags instead.*
-
 ## Command-Line Flags
 
 ### yum
-```bash
-yum install -y -q package            # Quiet, auto-yes
-yum update -y -q                     # Quiet update
-yum list installed -q                # Quiet list
-yum clean all -q                     # Quiet clean
-```
-- `-y` or `--assumeyes`: Auto-confirm
-- `-q` or `--quiet`: Quiet
-- `--nogpgcheck`: Skip GPG check (security risk)
-- `--disablerepo=*`: Disable all repos
-- `--enablerepo=repo`: Enable specific repo
+- `-y` or `--assumeyes`: Auto-confirm (skip prompts)
+- `-q` or `--quiet`: Quiet output
 
 ### dnf
-```bash
-dnf install -y -q package            # Quiet, auto-yes
-dnf update -y -q                     # Quiet update
-dnf list installed -q                # Quiet list
-dnf clean all -q                     # Quiet clean
-dnf makecache -q                     # Quiet cache refresh
-```
-- `-y` or `--assumeyes`: Auto-confirm
-- `-q` or `--quiet`: Quiet
-- `--nogpgcheck`: Skip GPG check (security risk)
-- `--setopt=install_weak_deps=False`: Skip weak dependencies
-- `--best`: Use best available version
+- `-y` or `--assumeyes`: Auto-confirm (skip prompts)
+- `-q` or `--quiet`: Quiet output
 
 ### microdnf
-```bash
-microdnf install -y package          # Auto-yes
-microdnf update -y                   # Auto-yes update
-microdnf clean all                   # Clean cache
-```
-- `-y` or `--assumeyes`: Auto-confirm
-- `--nodocs`: Skip documentation
-- `--setopt=install_weak_deps=0`: Skip weak deps
-- `--setopt=tsflags=nodocs`: Skip docs
+- `-y` or `--assumeyes`: Auto-confirm (skip prompts)
 
 ## Recommended Unattended Usage
 

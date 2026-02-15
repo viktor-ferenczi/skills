@@ -4,8 +4,8 @@ This index provides a quick reference to all documented programs in the Unattend
 
 ## Overview
 
-- **Total Programs Documented:** 167
-- **Unique Categories:** 120
+- **Total Programs Documented:** 149
+- **Unique Categories:** 114
 - **Coverage:** Multi-platform command-line tools, development utilities, cloud CLIs, databases, networking tools, security scanners, monitoring systems, and more.
 
 ## By Category
@@ -151,10 +151,6 @@ This index provides a quick reference to all documented programs in the Unattend
 
 - [pg_restore](programs/pg_restore.md) - Multi-platform
 
-### Date/Time
-
-- [date](programs/date.md) - Multi-platform
-
 ### Dependency Manager (PHP)
 
 - [composer](programs/composer.md) - Multi-platform
@@ -162,10 +158,6 @@ This index provides a quick reference to all documented programs in the Unattend
 ### Dependency Manager (Ruby)
 
 - [bundle](programs/bundle.md) - Multi-platform
-
-### Encoding
-
-- [base64](programs/base64.md) - Multi-platform
 
 ### Encrypted Backup
 
@@ -178,10 +170,6 @@ This index provides a quick reference to all documented programs in the Unattend
 ### File Comparison
 
 - [diff](programs/diff.md) - Multi-platform
-
-### File Display
-
-- [cat](programs/cat.md) - Multi-platform
 
 ### File Patching
 
@@ -201,8 +189,6 @@ This index provides a quick reference to all documented programs in the Unattend
 
 ### Firewall
 
-- [firewall-cmd](programs/firewall-cmd.md) - Linux (firewalld)
-- [iptables](programs/iptables.md) - Linux
 - [nft](programs/nft.md) - Linux (iptables successor)
 - [ufw](programs/ufw.md) - Linux (Ubuntu/Debian)
 
@@ -222,10 +208,6 @@ This index provides a quick reference to all documented programs in the Unattend
 
 - [terraform](programs/terraform.md) - Multi-platform
 
-### JSON Processor
-
-- [jq](programs/jq.md) - Multi-platform
-
 ### Java Build Tool
 
 - [ant](programs/ant.md) - Multi-platform
@@ -243,7 +225,6 @@ This index provides a quick reference to all documented programs in the Unattend
 ### Load Testing
 
 - [ab](programs/ab.md) - Multi-platform
-- [curl-loader](programs/curl-loader.md) - Linux
 
 ### Local Kubernetes
 
@@ -278,7 +259,6 @@ This index provides a quick reference to all documented programs in the Unattend
 
 - [kafka-console-consumer](programs/kafka-console-consumer.md) - Multi-platform
 - [kafka-console-producer](programs/kafka-console-producer.md) - Multi-platform
-- [kafka-topics](programs/kafka-topics.md) - Multi-platform
 
 ### Message Queue (RabbitMQ)
 
@@ -326,7 +306,6 @@ This index provides a quick reference to all documented programs in the Unattend
 ### Network Statistics
 
 - [netstat](programs/netstat.md) - Linux, macOS, Windows
-- [ss](programs/ss.md) - Linux
 
 ### Network Testing
 
@@ -390,10 +369,6 @@ This index provides a quick reference to all documented programs in the Unattend
 
 - [hashcat](programs/hashcat.md) - Multi-platform
 
-### Permission Management
-
-- [chmod / chown / chgrp](programs/chmod.md) - Multi-platform
-
 ### Process Control
 
 - [kill / killall / pkill](programs/kill.md) - Multi-platform
@@ -454,7 +429,6 @@ This index provides a quick reference to all documented programs in the Unattend
 
 ### Service Management
 
-- [sc](programs/sc.md) - Windows
 - [systemctl](programs/systemctl.md) - Linux (systemd)
 
 ### Shell/Scripting
@@ -465,16 +439,10 @@ This index provides a quick reference to all documented programs in the Unattend
 
 - [sed](programs/sed.md) - Multi-platform
 
-### System Logging
-
-- [systemd-journald](programs/journald.md) - Linux (systemd)
-
 ### System Monitoring
 
 - [dstat](programs/dstat.md) - Linux
-- [iostat](programs/iostat.md) - Multi-platform
 - [mpstat](programs/mpstat.md) - Linux
-- [sar](programs/sar.md) - Linux
 - [vmstat](programs/vmstat.md) - Multi-platform
 
 ### Terminal Multiplexer
@@ -484,10 +452,7 @@ This index provides a quick reference to all documented programs in the Unattend
 
 ### Text Processing
 
-- [awk](programs/awk.md) - Multi-platform
-- [cut](programs/cut.md) - Multi-platform
 - [head](programs/head.md) - Multi-platform
-- [sort](programs/sort.md) - Multi-platform
 - [tail](programs/tail.md) - Multi-platform
 - [uniq](programs/uniq.md) - Multi-platform
 

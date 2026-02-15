@@ -7,50 +7,50 @@
 
 | Goal | Command |
 |------|---------|
-| Non-interactive | `ssh -o BatchMode=yes host` |
-| Execute command | `ssh host 'command'` |
-| Quiet | `ssh -q host` |
-| Copy file | `scp -q file host:/path` |
+| Non-interactive SSH | `ssh -o BatchMode=yes host` |
+| Quiet SSH | `ssh -q host` |
+| Quiet copy | `scp -q file host:/path` |
+| SFTP batch mode | `sftp -b batchfile host` |
 
 ## Environment Variables
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `SSH_AUTH_SOCK` | `/path` | SSH agent socket |
+| `SSH_AUTH_SOCK` | `/path` | SSH agent socket (avoids key passphrase prompts) |
 
 ## SSH Command-Line Flags
 
 ```bash
-ssh -o BatchMode=yes host            # Non-interactive
+ssh -o BatchMode=yes host            # Non-interactive (fail instead of prompt)
 ssh -o StrictHostKeyChecking=accept-new host # Auto-accept new host keys
 # WARNING: StrictHostKeyChecking changes are security-sensitive.
 # Confirm with the human operator before using =accept-new or =no.
 ssh -o ConnectTimeout=10 host        # 10s timeout
 ssh -q host                          # Quiet
-ssh -n host command                  # Redirect stdin
-ssh -f host command                  # Background
+ssh -n host command                  # Redirect stdin from /dev/null
 ssh -T host                          # Disable pseudo-tty
-ssh -i keyfile host                  # Use specific key
 ```
+- `-o BatchMode=yes`: Non-interactive — fail on password prompts instead of asking
+- `-q`: Quiet — suppress warnings and diagnostic messages
+- `-n`: Redirect stdin from /dev/null — prevents reading from stdin
+- `-T`: Disable pseudo-tty allocation
+- `-o StrictHostKeyChecking=accept-new`: Auto-accept new host keys (**security-sensitive**)
+- `-o ConnectTimeout=N`: Connection timeout
 
 ## SCP Command-Line Flags
 
-```bash
-scp -q file host:/path               # Quiet copy
-scp -r dir host:/path                # Recursive
-scp -P 2222 file host:/path          # Custom port
-scp -i keyfile file host:/path       # Use key
-scp -o BatchMode=yes file host:/path # Non-interactive
-scp -C file host:/path               # Compress
-```
+- `-q`: Quiet — disable progress meter
+- `-o BatchMode=yes`: Non-interactive
 
 ## SFTP Command-Line Flags
 
 ```bash
-echo 'put file' | sftp -b - host     # Batch mode
+echo 'put file' | sftp -b - host     # Batch mode from stdin
 sftp -b batchfile host               # Batch from file
 sftp -o BatchMode=yes host           # Non-interactive
 ```
+- `-b`: Batch mode — read commands from file (use `-` for stdin)
+- `-o BatchMode=yes`: Non-interactive
 
 ## Recommended Unattended Usage
 

@@ -7,28 +7,10 @@
 
 | Goal | Command |
 |------|---------|
-| Login | `fly -t target login -c concourse-url` |
-| Trigger build | `fly -t target trigger-job -j pipeline/job` |
-| Hijack | `fly -t target intercept -j pipeline/job` |
-
-## Environment Variables
-
-| Variable | Value | Description |
-|----------|-------|-------------|
-| `FLY_HOME` | `~/.fly` | Fly config directory |
+| Non-interactive login | `fly -t target login -c url -u user -p pass` |
 
 ## Command-Line Flags
 
-```bash
-fly -t target login -c https://concourse.example.com
-fly -t target sync                   # Sync CLI
-fly -t target pipelines              # List pipelines
-fly -t target trigger-job -j pipeline/job
-fly -t target watch -j pipeline/job  # Watch build
-fly -t target builds                 # List builds
-fly -t target intercept -j pipeline/job  # Debug
-```
-- `-t` or `--target`: Target name
-- `-j` or `--job`: Pipeline/job
-- `-c` or `--concourse-url`: Concourse URL
-- `-n` or `--team`: Team name
+- `-t` or `--target`: Target name (required, avoids interactive selection)
+
+`fly` commands are generally non-interactive once a target is authenticated. The main concern for unattended use is providing credentials non-interactively during `fly login` (via `-u`/`-p` flags or token-based auth).

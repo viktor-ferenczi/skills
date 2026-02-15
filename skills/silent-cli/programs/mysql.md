@@ -7,45 +7,35 @@
 
 | Goal | Command |
 |------|---------|
-| Execute SQL | `mysql -u user -p -e 'SELECT 1'` |
-| Import file | `mysql -u user database < file.sql` |
 | Batch mode | `mysql -B -N -e 'SELECT * FROM table'` |
+| Silent | `mysql --silent -e 'SELECT 1'` |
 
 ## Environment Variables
 
 | Variable | Value | Description |
 |----------|-------|-------------|
-| `MYSQL_PWD` | `password` | Password (insecure) |
-| `MYSQL_HOST` | `localhost` | Default host |
+| `MYSQL_PWD` | `password` | Password (avoids interactive prompt; insecure) |
 
 ## Command-Line Flags
 
 ```bash
-mysql -u user -p -e "SELECT 1"       # Execute query
-mysql -u user -p database < script.sql  # Import SQL
-mysql -u user -p -B -N -e "SELECT * FROM table"  # Batch, no names
+mysql -u user -p -B -N -e "SELECT * FROM table"  # Batch, no column names
 mysql -u user -p --batch --skip-column-names -e "SELECT *"
 mysql -u user -p --silent -e "SELECT *"  # Silent
-mysql -u user -p -e "SELECT *" 2>/dev/null  # Suppress warnings
-mysql -u user -p --raw -e "SELECT *"  # No escaping
+mysql -u user -p --raw -e "SELECT *"  # No escaping (machine-readable)
 ```
-- `-u` or `--user`: Username
-- `-p` or `--password`: Password (prompt if no value)
-- `-e` or `--execute`: Execute command
-- `-B` or `--batch`: Batch mode (tab-separated)
+- `-e` or `--execute`: Execute command (non-interactive)
+- `-B` or `--batch`: Batch mode (tab-separated, no interactive formatting)
 - `-N` or `--skip-column-names`: No column headers
 - `--silent`: Silent mode
 - `--raw`: Raw output (no escaping)
-- `-h` or `--host`: Host
-- `-P` or `--port`: Port
-- `-D` or `--database`: Database
 
 ## Recommended Unattended Usage
 
 ```bash
 #!/bin/bash
 
-# Using defaults file (secure)
+# Using defaults file (secure, no password prompt)
 mysql --defaults-file=/path/to/my.cnf -e "SELECT 1"
 
 # Batch output for scripting

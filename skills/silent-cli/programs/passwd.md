@@ -10,8 +10,6 @@
 | Set password non-interactively | `echo 'user:password' \| chpasswd` |
 | Pipe to passwd | `echo -e 'newpass\nnewpass' \| passwd user` |
 | Set from stdin (root) | `echo 'newpass' \| passwd --stdin user` |
-| Lock account | `passwd -l user` |
-| Expire password | `passwd -e user` |
 
 ## Command-Line Flags
 

@@ -23,38 +23,14 @@
 
 ## Command-Line Flags
 
-### apt-get
-```bash
-apt-get update -qq
-apt-get install -y -qq --no-install-recommends package
-```
 - `-y` or `--yes`: Automatic yes to prompts
 - `-qq`: No output except errors (very quiet)
 - `-q` or `--quiet`: Reduced output
 - `--no-install-recommends`: Don't install recommended packages
-- `--no-upgrade`: Don't upgrade existing packages
-- `--only-upgrade`: Only upgrade, don't install new
-- `--allow-downgrades`: Allow package downgrades
-- `--allow-remove-essential`: Allow removing essential packages
-- `--allow-change-held-packages`: Allow changing held packages
-- `-o Dpkg::Options::="--force-confdef"`: Use default config on conflict
-- `-o Dpkg::Options::="--force-confold"`: Keep old config on conflict
+- `-o Dpkg::Options::="--force-confdef"`: Use default config on conflict (avoids interactive prompt)
+- `-o Dpkg::Options::="--force-confold"`: Keep old config on conflict (avoids interactive prompt)
 
-### apt
-```bash
-apt update -qq
-apt install -y -qq --no-install-recommends package
-```
-- Same flags as apt-get generally
-- Note: `apt` is designed for interactive use, prefer `apt-get` for scripts
-
-### apt-cache
-```bash
-apt-cache search -q package
-apt-cache policy package
-```
-- `-q`: Quiet mode
-- `-n` or `--names-only`: Search names only (faster)
+> **Note:** Prefer `apt-get` over `apt` for scripts — `apt` is designed for interactive use.
 
 ## Configuration Files
 
@@ -122,4 +98,3 @@ echo 'package-name question-type question answer' | debconf-set-selections
 # Example: Pre-accept MySQL license
 echo 'mysql-apt-config mysql-apt-config/select-server select mysql-8.0' | debconf-set-selections
 ```
-

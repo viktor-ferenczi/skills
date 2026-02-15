@@ -7,37 +7,26 @@
 
 | Goal | Command |
 |------|---------|
-| Kill by PID | `kill -TERM <pid>` |
-| Kill by name | `killall processname` |
-| Pattern kill | `pkill pattern` |
+| Quiet killall | `killall -q processname` |
+| Check if exists | `kill -0 <pid>` |
 
 ## Command-Line Flags
 
 ### kill
-```bash
-kill -TERM <pid>                        # Graceful kill
-kill -KILL <pid>                        # Force kill
-kill -0 <pid>                           # Check if exists (exit code)
-```
-- `-TERM` or `-15`: Terminate
-- `-KILL` or `-9`: Kill
-- `-HUP` or `-1`: Hang up
-- `-0`: Check process exists
+- `-0`: Check if process exists (exit code only, no signal sent — useful for scripts)
 
 ### killall
-```bash
-killall -q processname                  # Quiet
-killall -w processname                  # Wait for termination
-```
-- `-q`: Quiet
-- `-w`: Wait
+- `-q`: Quiet (don't complain if no processes found)
+- `-w`: Wait for termination to complete
 
-### pkill
+## Recommended Unattended Usage
+
 ```bash
-pkill -f pattern                        # Match full command line
-pkill -x exactname                      # Exact match
-pkill -u username                       # User's processes
+#!/bin/bash
+
+# Quietly kill process, no error if not found
+killall -q processname
+
+# Check if process exists before acting
+kill -0 "$PID" 2>/dev/null && echo "running" || echo "not running"
 ```
-- `-f`: Full command line
-- `-x`: Exact match
-- `-u`: User

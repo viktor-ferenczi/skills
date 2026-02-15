@@ -7,29 +7,11 @@
 
 | Goal | Command |
 |------|---------|
-| Find files | `find . -name '*.txt'` |
-| Silent | `find . -name '*.txt' 2>/dev/null` |
-| Execute | `find . -name '*.log' -delete` |
-
-## Environment Variables
-
-| Variable | Value | Description |
-|----------|-------|-------------|
-| `POSIXLY_CORRECT` | `1` | POSIX behavior |
+| Suppress errors silently | `find . -name '*.txt' 2>/dev/null` |
+| Null-terminated output | `find . -print0 \| xargs -0 cmd` |
 
 ## Command-Line Flags
 
-```bash
-find . -name '*.txt'                    # By name
-find . -type f -name '*.log'            # Files only
-find . -type d -name 'node_modules'     # Directories
-find . -mtime +7 -delete                # Delete old files
-find . -exec rm {} \;                   # Execute on each
-find . -print0 | xargs -0 rm            # Safe for spaces
-```
-- `-name`: Name pattern
-- `-type`: f=file, d=directory
-- `-mtime`: Modified time (days)
-- `-exec`: Execute command
-- `-delete`: Delete files
-- `-print0`: Null-terminated output
+- `-print0`: Null-terminated output (safe for filenames with spaces/special chars in pipelines)
+
+`find` is inherently non-interactive. Redirect stderr (`2>/dev/null`) to suppress permission-denied errors in unattended scripts. Use `-print0` with `xargs -0` for safe automated processing of filenames.

@@ -7,44 +7,29 @@
 
 | Goal | Command |
 |------|---------|
-| Execute | `mongo --eval 'db.collection.find()'` |
-| Script | `mongo script.js` |
 | Quiet | `mongo --quiet --eval 'db.stats()'` |
-
-## Environment Variables
-
-| Variable | Value | Description |
-|----------|-------|-------------|
-| `MONGOSH_EDITOR` | `vim` | Default editor for mongosh |
+| JSON output | `mongosh --json --eval 'db.stats()'` |
 
 ## mongo Command-Line Flags
 
 ```bash
-mongo --eval "db.stats()"            # Execute JavaScript
-mongo script.js                      # Run script file
+mongo --eval "db.stats()"            # Execute JavaScript (non-interactive)
+mongo script.js                      # Run script file (non-interactive)
 mongo --quiet script.js              # Quiet mode
 mongo --eval "db.collection.find()" 2>/dev/null
-mongo --host host:port --eval "db.adminCommand('ping')"
-mongo --username user --password pass --eval "db.stats()"
-mongo --authenticationDatabase admin --eval "db.stats()"
 ```
 
 ## mongosh Command-Line Flags
 
 ```bash
-mongosh --eval "db.stats()"
-mongosh --quiet --eval "db.stats()"
-mongosh --file script.js
-mongosh "mongodb://user:pass@host/db" --eval "db.stats()"
-mongosh --json --eval "db.stats()"   # JSON output
+mongosh --quiet --eval "db.stats()"  # Quiet mode
+mongosh --file script.js             # Run script file (non-interactive)
+mongosh --json --eval "db.stats()"   # JSON output (machine-readable)
 ```
-- `--eval`: Execute JavaScript
+- `--eval`: Execute JavaScript (non-interactive)
 - `--quiet`: Quiet mode
-- `--host`: Host:port
-- `--username` / `--password`: Credentials
-- `--authenticationDatabase`: Auth database
 - `--json`: JSON output (mongosh)
-- `--file`: Execute file
+- `--file`: Execute file (non-interactive)
 
 ## Recommended Unattended Usage
 
