@@ -1,0 +1,178 @@
+# Program Index
+
+This index provides a quick reference to all documented programs in the Unattended Execution Skill.
+
+## Overview
+
+- **Total Programs Documented:** 167
+- **Unique Categories:** 119
+- **Coverage:** Multi-platform command-line tools, development utilities, cloud CLIs, databases, networking tools, security scanners, monitoring systems, and more.
+
+## Alphabetical Index
+
+- [7z / 7za](programs/7z.md) - Compression - Multi-platform
+- [ab](programs/ab.md) - Load Testing - Multi-platform
+- [amtool](programs/amtool.md) - Monitoring (Alertmanager) - Multi-platform
+- [ansible](programs/ansible.md) - Configuration Management - Multi-platform
+- [ansible-playbook](programs/ansible-playbook.md) - Configuration Management - Multi-platform
+- [ansible-vault](programs/ansible-vault.md) - Configuration Management (Secrets) - Multi-platform
+- [ant](programs/ant.md) - Java Build Tool - Multi-platform
+- [apt / apt-get / apt-cache](programs/apt.md) - Package Management - Linux (Debian, Ubuntu, and derivatives)
+- [awk](programs/awk.md) - Text Processing - Multi-platform
+- [aws](programs/aws.md) - Cloud (Amazon Web Services) - Multi-platform
+- [az](programs/az.md) - Cloud (Microsoft Azure) - Multi-platform
+- [base64](programs/base64.md) - Encoding - Multi-platform
+- [boundary](programs/boundary.md) - Identity-based Access - Multi-platform
+- [bundle](programs/bundle.md) - Dependency Manager (Ruby) - Multi-platform
+- [bzip2 / bunzip2 / bzcat](programs/bzip2.md) - Compression - Multi-platform
+- [cargo](programs/cargo.md) - Rust Package Manager - Multi-platform
+- [cat](programs/cat.md) - File Display - Multi-platform
+- [chmod / chown / chgrp](programs/chmod.md) - Permission Management - Multi-platform
+- [choco](programs/choco.md) - Package Manager - Windows
+- [circleci](programs/circleci.md) - CI/CD - Multi-platform
+- [cmake](programs/cmake.md) - Build System Generator - Multi-platform
+- [cmd.exe](programs/cmd.md) - Command Shell - Windows
+- [composer](programs/composer.md) - Dependency Manager (PHP) - Multi-platform
+- [conda](programs/conda.md) - Package/Environment Manager - Multi-platform
+- [consul](programs/consul.md) - Service Discovery - Multi-platform
+- [curl](programs/curl.md) - Data Transfer - Multi-platform
+- [curl-loader](programs/curl-loader.md) - Load Testing - Linux
+- [cut](programs/cut.md) - Text Processing - Multi-platform
+- [date](programs/date.md) - Date/Time - Multi-platform
+- [diff](programs/diff.md) - File Comparison - Multi-platform
+- [dig / nslookup / host](programs/dig.md) - DNS Lookup - Multi-platform
+- [docker](programs/docker.md) - Container Runtime - Multi-platform
+- [docker-compose](programs/docker-compose.md) - Container Orchestration - Multi-platform
+- [dotnet](programs/dotnet.md) - .NET Build Tool - Multi-platform
+- [dstat](programs/dstat.md) - System Monitoring - Linux
+- [duplicity](programs/duplicity.md) - Encrypted Backup - Linux, macOS
+- [elasticsearch](programs/elasticsearch.md) - Search Engine - Multi-platform
+- [filebeat](programs/filebeat.md) - Log Shipper - Multi-platform
+- [find](programs/find.md) - File Search - Multi-platform
+- [firewall-cmd](programs/firewall-cmd.md) - Firewall - Linux (firewalld)
+- [fluent-bit](programs/fluent-bit.md) - Log Processing - Multi-platform
+- [fly](programs/fly.md) - CI/CD - Multi-platform
+- [fuser](programs/fuser.md) - Process Identification - Linux, macOS
+- [gcloud](programs/gcloud.md) - Cloud (Google Cloud Platform) - Multi-platform
+- [gem](programs/gem.md) - Package Manager (Ruby) - Multi-platform
+- [gh](programs/gh.md) - GitHub Integration - Multi-platform
+- [git](programs/git.md) - Version Control - Multi-platform
+- [gitlab-runner](programs/gitlab-runner.md) - CI/CD - Multi-platform
+- [glab](programs/glab.md) - GitLab Integration - Multi-platform
+- [go](programs/go.md) - Programming Language - Multi-platform
+- [gpg](programs/gpg.md) - Encryption/Signing - Multi-platform
+- [gradle](programs/gradle.md) - Java Build Tool - Multi-platform
+- [grafana-cli](programs/grafana-cli.md) - Monitoring (Grafana) - Multi-platform
+- [grep](programs/grep.md) - Text Search - Multi-platform
+- [gsutil](programs/gsutil.md) - Cloud Storage (Google Cloud) - Multi-platform
+- [gzip / gunzip / zcat](programs/gzip.md) - Compression - Multi-platform
+- [hashcat](programs/hashcat.md) - Password Cracker (GPU) - Multi-platform
+- [head](programs/head.md) - Text Processing - Multi-platform
+- [heartbeat](programs/heartbeat.md) - Uptime Monitoring - Multi-platform
+- [helm](programs/helm.md) - Kubernetes Package Manager - Multi-platform
+- [hg](programs/hg.md) - Version Control - Multi-platform
+- [hydra](programs/hydra.md) - Password Brute Forcer - Multi-platform
+- [iftop](programs/iftop.md) - Network Monitoring - Linux
+- [influx](programs/influx.md) - Time Series Database - Multi-platform
+- [iostat](programs/iostat.md) - System Monitoring - Multi-platform
+- [iperf / iperf3](programs/iperf.md) - Network Testing - Multi-platform
+- [iptables](programs/iptables.md) - Firewall - Linux
+- [jenkins-cli](programs/jenkins-cli.md) - CI/CD - Multi-platform
+- [john](programs/john.md) - Password Cracker - Multi-platform
+- [journalctl](programs/journalctl.md) - Log Viewer - Linux (systemd)
+- [jq](programs/jq.md) - JSON Processor - Multi-platform
+- [kafka-console-consumer](programs/kafka-console-consumer.md) - Message Queue (Apache Kafka) - Multi-platform
+- [kafka-console-producer](programs/kafka-console-producer.md) - Message Queue (Apache Kafka) - Multi-platform
+- [kafka-topics](programs/kafka-topics.md) - Message Queue (Apache Kafka) - Multi-platform
+- [kibana](programs/kibana.md) - Data Visualization - Multi-platform
+- [kill / killall / pkill](programs/kill.md) - Process Control - Multi-platform
+- [kind](programs/kind.md) - Local Kubernetes (Docker-based) - Multi-platform
+- [kubectl](programs/kubectl.md) - Kubernetes CLI - Multi-platform
+- [logcli](programs/loki.md) - Log Aggregation - Multi-platform
+- [logstash](programs/logstash.md) - Log Processing - Multi-platform
+- [lsof](programs/lsof.md) - File/Process Inspection - Linux, macOS
+- [make](programs/make.md) - Build Automation - Multi-platform
+- [masscan](programs/masscan.md) - Network Scanner (High Speed) - Linux
+- [mc](programs/mc.md) - Object Storage - Multi-platform
+- [md5sum / md5 / shasum / sha256sum](programs/md5sum.md) - Checksum - Multi-platform
+- [metricbeat](programs/metricbeat.md) - Metrics Shipper - Multi-platform
+- [minikube](programs/minikube.md) - Local Kubernetes - Multi-platform
+- [mongo / mongosh](programs/mongo.md) - Database Client (MongoDB) - Multi-platform
+- [mpstat](programs/mpstat.md) - System Monitoring - Linux
+- [mvn](programs/mvn.md) - Java Build Tool - Multi-platform
+- [mysql](programs/mysql.md) - Database Client - Multi-platform
+- [mysqldump](programs/mysqldump.md) - Database Backup - Multi-platform
+- [nc / netcat](programs/nc.md) - Network Tools - Multi-platform
+- [nethogs](programs/nethogs.md) - Network Monitoring - Linux
+- [netstat](programs/netstat.md) - Network Statistics - Linux, macOS, Windows
+- [nft](programs/nft.md) - Firewall - Linux (iptables successor)
+- [nikto](programs/nikto.md) - Web Vulnerability Scanner - Multi-platform
+- [nmap](programs/nmap.md) - Network Security Scanner - Multi-platform
+- [nohup](programs/nohup.md) - Process Control - Multi-platform
+- [nomad](programs/nomad.md) - Workload Orchestration - Multi-platform
+- [npm](programs/npm.md) - Package Manager (Node.js) - Multi-platform
+- [npx](programs/npx.md) - Package Runner (Node.js) - Multi-platform
+- [openssl](programs/openssl.md) - Cryptography/Security - Multi-platform
+- [packer](programs/packer.md) - Machine Image Builder - Multi-platform
+- [pacman](programs/pacman.md) - Package Management - Linux (Arch, Manjaro)
+- [passwd / chpasswd](programs/passwd.md) - User Account Management - Linux, macOS
+- [patch](programs/patch.md) - File Patching - Multi-platform
+- [pg_dump](programs/pg_dump.md) - Database Backup - Multi-platform
+- [pg_restore](programs/pg_restore.md) - Database Restore - Multi-platform
+- [pidstat](programs/pidstat.md) - Process Monitoring - Linux
+- [ping](programs/ping.md) - Network Testing - Multi-platform
+- [pip](programs/pip.md) - Package Manager (Python) - Multi-platform
+- [pnpm](programs/pnpm.md) - Package Manager (Node.js) - Multi-platform
+- [PowerShell](programs/powershell.md) - Shell/Scripting - Windows, Linux, macOS
+- [promtool](programs/promtool.md) - Monitoring (Prometheus) - Multi-platform
+- [ps](programs/ps.md) - Process Status - Multi-platform
+- [psql](programs/psql.md) - Database Client - Multi-platform
+- [puppet](programs/puppet.md) - Configuration Management - Multi-platform
+- [rabbitmqadmin](programs/rabbitmqadmin.md) - Message Queue (RabbitMQ) - Multi-platform
+- [rabbitmqctl](programs/rabbitmqctl.md) - Message Queue (RabbitMQ) - Multi-platform
+- [rclone](programs/rclone.md) - Cloud Storage Sync - Multi-platform
+- [redis-cli](programs/redis-cli.md) - Database Client (Redis) - Multi-platform
+- [restic](programs/restic.md) - Backup Tool - Multi-platform
+- [rsync](programs/rsync.md) - File Transfer - Multi-platform
+- [rustc](programs/rustc.md) - Rust Compiler - Multi-platform
+- [s3cmd](programs/s3cmd.md) - Cloud Storage (S3-compatible) - Multi-platform
+- [salt / salt-call / salt-ssh](programs/salt.md) - Configuration Management - Multi-platform
+- [sar](programs/sar.md) - System Monitoring - Linux
+- [sc](programs/sc.md) - Service Management - Windows
+- [screen](programs/screen.md) - Terminal Multiplexer - Multi-platform
+- [sed](programs/sed.md) - Stream Editor - Multi-platform
+- [sort](programs/sort.md) - Text Processing - Multi-platform
+- [smbpasswd / pdbedit](programs/smbpasswd.md) - Samba User Management - Linux, macOS
+- [sqlite3](programs/sqlite3.md) - Database Client (SQLite) - Multi-platform
+- [sqlmap](programs/sqlmap.md) - SQL Injection Scanner - Multi-platform
+- [ss](programs/ss.md) - Network Statistics - Linux
+- [ssh / scp / sftp](programs/ssh.md) - Remote Access - Multi-platform
+- [ssh-keygen](programs/ssh-keygen.md) - SSH Key Management - Multi-platform
+- [svn](programs/svn.md) - Version Control - Multi-platform
+- [systemctl](programs/systemctl.md) - Service Management - Linux (systemd)
+- [systemd-journald](programs/journald.md) - System Logging - Linux (systemd)
+- [tail](programs/tail.md) - Text Processing - Multi-platform
+- [tar](programs/tar.md) - Archiving - Multi-platform
+- [tcpdump](programs/tcpdump.md) - Network Packet Analysis - Multi-platform
+- [tee](programs/tee.md) - Output Redirection - Multi-platform
+- [telegraf](programs/telegraf.md) - Metrics Collection - Multi-platform
+- [terraform](programs/terraform.md) - Infrastructure as Code - Multi-platform
+- [timeout](programs/timeout.md) - Process Control - Linux, macOS (gtimeout)
+- [tmux](programs/tmux.md) - Terminal Multiplexer - Multi-platform
+- [tr](programs/tr.md) - Text Translation - Multi-platform
+- [tshark](programs/tshark.md) - Network Packet Analysis - Multi-platform
+- [ufw](programs/ufw.md) - Firewall - Linux (Ubuntu/Debian)
+- [uniq](programs/uniq.md) - Text Processing - Multi-platform
+- [vagrant](programs/vagrant.md) - VM Management - Multi-platform
+- [vault](programs/vault.md) - Secrets Management - Multi-platform
+- [vmstat](programs/vmstat.md) - System Monitoring - Multi-platform
+- [waypoint](programs/waypoint.md) - Application Deployment - Multi-platform
+- [wc](programs/wc.md) - Text Statistics - Multi-platform
+- [wget](programs/wget.md) - Data Transfer - Multi-platform
+- [winget](programs/winget.md) - Package Manager - Windows 10/11
+- [xargs](programs/xargs.md) - Command Building - Multi-platform
+- [xz / unxz / xzcat](programs/xz.md) - Compression - Multi-platform
+- [yarn](programs/yarn.md) - Package Manager (Node.js) - Multi-platform
+- [yq](programs/yq.md) - YAML Processor - Multi-platform
+- [yum / dnf / microdnf](programs/yum-dnf.md) - Package Management - Linux (RHEL, CentOS, Fedora, Amazon Linux)
+- [zip / unzip](programs/zip.md) - Compression - Multi-platform
