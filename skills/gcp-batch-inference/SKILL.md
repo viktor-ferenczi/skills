@@ -2,6 +2,16 @@
 name: gcp-batch-inference
 description: Running batch inference on Google Cloud (also known as Vertex AI)
 license: MIT
+version: 1.0.0
+tags:
+  - gcp
+  - google-cloud
+  - inference
+  - google-genai
+  - google
+  - cloud
+  - batch-inference
+  - batch
 ---
 
 # Overview

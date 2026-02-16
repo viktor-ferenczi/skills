@@ -2,10 +2,18 @@
 name: silent-cli
 description: Environment variables and parameters for running command line programs reliably in non-interactive environments (unattended). Includes silent modes, color/disable TTY, and reduced output options for 155 CLI tools.
 license: MIT
-metadata:
-  tags: [cli, automation, scripting, unattended, environment-variables, flags, ci-cd, devops]
-  version: 1.1.0
-  author: Viktor Ferenczi
+version: 1.1.1
+author: Viktor Ferenczi
+tags:
+  - cli
+  - terminal
+  - automation
+  - scripting
+  - unattended
+  - environment-variables
+  - flags
+  - ci-cd
+  - devops
 ---
 
 # Silent and Unattended CLI Execution Skill
