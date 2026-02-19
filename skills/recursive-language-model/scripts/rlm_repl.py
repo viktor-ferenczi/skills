@@ -23,78 +23,70 @@ Helper functions available in exec:
     add_buffer(text)                           # Store intermediate results
 """
 
-import os
-import sys
-import re
-import pickle
-import hashlib
 import argparse
+import io
+import pickle
+import re
+import sys
+from contextlib import redirect_stdout, redirect_stderr
 from pathlib import Path
 
-STATE_FILE = Path("/tmp/rlm_state.pkl")
-
+STATE_FILE = Path(__file__) / ".rlm" / "state.pkl"
+MAX_OUTPUT_CHARS = 8000
 
 def load_state():
-    """Load REPL state from disk."""
     if STATE_FILE.exists():
         with open(STATE_FILE, "rb") as f:
             return pickle.load(f)
     return {}
 
-
 def save_state(state):
-    """Save REPL state to disk."""
+    STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(STATE_FILE, "wb") as f:
         pickle.dump(state, f)
 
-
 def cmd_init(context_path: str):
-    """Initialize REPL with context file."""
     path = Path(context_path).expanduser()
     if not path.exists():
         print(f"Error: File not found: {path}", file=sys.stderr)
         sys.exit(1)
     content = path.read_text(encoding="utf-8", errors="ignore")
     state = {
-        "__context_path": str(path),
-        "__content": content,
-        "__buffers": [],
-        "__chunk_size": 200000,
+        "context_path": str(path),
+        "content": content,
+        "buffers": [],
+        "chunk_size": 200000,
     }
     save_state(state)
     print(f"Loaded {len(content)} chars from {path}")
     print("Use 'python rlm_repl.py status' to verify.")
 
-
 def cmd_status(show_vars: bool = False):
-    """Show current REPL state."""
     state = load_state()
     if not state:
         print("No active context. Use 'init <path>' first.")
         return
-    print(f"Context path: {state.get('__context_path', 'N/A')}")
-    print(f"Content size: {len(state.get('__content', ''))} chars")
-    print(f"Chunk size:   {state.get('__chunk_size', 200000)}")
-    print(f"Buffers:      {len(state.get('__buffers', []))}")
+    print(f"Context path: {state.get('context_path', 'N/A')}")
+    print(f"Content size: {len(state.get('content', ''))} chars")
+    print(f"Chunk size:   {state.get('chunk_size', 200000)}")
+    print(f"Buffers:      {len(state.get('buffers', []))}")
     if show_vars:
         print(f"\nVariables: {', '.join(state.keys())}")
         print("Helper functions: peek(), grep(), chunk_indices(), write_chunks(), add_buffer()")
 
-
 def cmd_exec(code_str: str = None):
-    """Execute Python code with injected helpers."""
     state = load_state()
-    if "__content" not in state:
-        print("No context loaded. Use 'init <path>' first.", file=sys.stderr)
+    if "content" not in state:
+        print("No active context. Use 'init <path>' first.", file=sys.stderr)
         sys.exit(1)
 
-    content = state["__content"]
-    chunk_size = state.get("__chunk_size", 200000)
+    content = state["content"]
+    chunk_size = state.get("chunk_size", 200000)
 
     def peek(start=0, end=1000):
         snippet = content[start:end]
         total = len(content)
-        return f"\n[--- chunk bytes {start}–{end} ({len(snippet)} chars) ---]\n{snippet}\n[--- (total {total} chars) ---]"
+        return f"\n[--- chunk bytes {start}-{end} ({len(snippet)} chars) ---]\n{snippet}\n[--- (total {total} chars) ---]"
 
     def grep(pattern: str, max_matches: int = 20, window: int = 120, flags: int = 0):
         matches = []
@@ -102,7 +94,7 @@ def cmd_exec(code_str: str = None):
             start = max(m.start() - window, 0)
             end = min(m.end() + window, len(content))
             snippet = content[start:end]
-            matches.append(f"\n[match at {m.start()}–{m.end()}]\n{snippet}")
+            matches.append(f"\n[match at {m.start()}-{m.end()}]\n{snippet}")
             if len(matches) >= max_matches:
                 break
         return matches
@@ -130,19 +122,19 @@ def cmd_exec(code_str: str = None):
         return written
 
     def add_buffer(text: str):
-        state["__buffers"].append(text)
+        state["buffers"].append(text)
         save_state(state)
-        return f"Buffer #{len(state['__buffers'])} added."
+        return f"Buffer #{len(state['buffers'])} added."
 
     if code_str is None:
         code_str = sys.stdin.read()
 
     exec_globals = {
         "__builtins__": __builtins__,
-        "__content": content,
-        "__context_path": state.get("__context_path"),
-        "__buffers": state.get("__buffers", []),
-        "__chunk_size": chunk_size,
+        "content": content,
+        "context_path": state.get("context_path"),
+        "buffers": state.get("buffers", []),
+        "chunk_size": chunk_size,
         "peek": peek,
         "grep": grep,
         "chunk_indices": chunk_indices,
@@ -150,31 +142,34 @@ def cmd_exec(code_str: str = None):
         "add_buffer": add_buffer,
     }
 
-    try:
-        result = exec(code_str, exec_globals)
-    except Exception as e:
-        print(f"Error: {e}", file=sys.stderr)
-        sys.exit(1)
+    f = io.StringIO()
+    with redirect_stdout(f), redirect_stderr(f):
+        try:
+            exec(code_str, exec_globals)
+        except Exception as e:
+            print(f"Error: {e}")
+
+    output = f.getvalue()
+    if len(output) > MAX_OUTPUT_CHARS:
+        sys.stdout.write(output[:MAX_OUTPUT_CHARS])
+        sys.stdout.write(f"\n... [Output truncated. Exceeded {MAX_OUTPUT_CHARS} chars] ...\n")
+    else:
+        sys.stdout.write(output)
 
     save_state(state)
 
-
 def cmd_export_buffers(out_path: str):
-    """Export buffers to file."""
     state = load_state()
-    buffers = state.get("__buffers", [])
+    buffers = state.get("buffers", [])
     Path(out_path).write_text("\n---\n".join(buffers), encoding="utf-8")
     print(f"Exported {len(buffers)} buffers to {out_path}")
 
-
 def cmd_reset():
-    """Delete state file."""
     if STATE_FILE.exists():
         STATE_FILE.unlink()
         print("State cleared.")
     else:
         print("No state to clear.")
-
 
 def main():
     parser = argparse.ArgumentParser(description="RLM Persistent Python REPL")
@@ -206,7 +201,6 @@ def main():
         cmd_export_buffers(args.out_path)
     elif args.command == "reset":
         cmd_reset()
-
 
 if __name__ == "__main__":
     main()
