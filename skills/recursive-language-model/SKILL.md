@@ -1,16 +1,7 @@
 ---
 name: recursive-language-model
 description: Recursive Language Model workflow for processing documents that exceed context window limits. Uses a persistent Python REPL and subordinate agents to chunk, search, and analyze large context files.
-version: 1.0.0
-author: Adapted from brainqub3/claude_code_RLM
-tags:
- - rlm
- - context-management
- - context-engineering
- - long-context
- - document-analysis
- - chunking
- - recursive
+license: MIT
 ---
 
 # RLM (Recursive Language Model) Skill
