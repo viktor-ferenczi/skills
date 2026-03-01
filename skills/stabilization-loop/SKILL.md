@@ -7,11 +7,12 @@ license: MIT
 Stabilize the project:
 1. If there are any local changes, then commit the current code into the local Git repository with commit message "Claude".
 2. Make sure that the code compiles and the linter checks pass. If not, then fix those and go to step 1. 
-3. Run the server, wait until it starts.
-4. Run the tests.
-5. If the tests succeed and the server hasn't crashed or logged any errors, then STOP.
-6. If the test fails, then analyze the test errors, try to fix them and go to step 1.
-7. If the server crashes or logged an error, then analyze the crashes or errors, try to fix them and go to step 1.
+3. Stop the server if it is running.
+4. Start the server, wait until it is completely up and ready.
+5. Run the tests.
+6. If the tests succeed and the server hasn't crashed or logged any errors, then STOP.
+7. If the test fails, then analyze the test errors, try to fix them and go to step 1.
+8. If the server crashes or logged an error, then analyze the crashes or errors, try to fix them and go to step 1.
 
 Once you are done:
 - Stop the server.
