@@ -19,6 +19,12 @@ Once you are done:
 - Provide a concise report of the problems found and fixed.
 
 Remarks:
+- **CRITICAL**: NEVER run more than one instance of the server at the same time.
+- **CRITICAL**: NEVER run more than one instance of the tests at the same time.
 - Keep working in the current branch, do not switch between branches.
 - Add logging as needed, but at them at the debug level, so they can be turned off later.
 - If you add expensive logging, then protect it with the condition on debug log level. 
+- Stop only when all tests succeed with no server errors or crashes.
+- Disable tests only if absolutely needed due to some external circumstance.
+- Remove tests only if they are not required or appropriate anymore due to former code changes (they were out of sync).
+- Cover any newly added server code with tests.
