@@ -1,6 +1,6 @@
 ---
 name: stabilization-loop
-description: Environment variables and parameters for running command line programs reliably in non-interactive environments (unattended). Includes silent modes, color/disable TTY, and reduced output options for 155 CLI tools.
+description: Stabilize and bugfix a software project by repeatedly testing and fixing in a loop until everything works.
 license: MIT
 ---
 
@@ -22,6 +22,9 @@ Once you are done:
 Remarks:
 - **CRITICAL**: NEVER run more than one instance of the server at the same time.
 - **CRITICAL**: NEVER run more than one instance of the tests at the same time.
+- **CRITICAL**: REFUSE to use this skill if the code is configured to connect to any production databases or systems.
+- This skill is supposed to be used in the Git working copy of the software set up for local development and testing.
+- This skill is optimized for running a server and testing it, but the server may be substituted with any other software.
 - Keep working in the current branch, do not switch between branches.
 - Add logging as needed, but at them at the debug level, so they can be turned off later.
 - If you add expensive logging, then protect it with the condition on debug log level. 
