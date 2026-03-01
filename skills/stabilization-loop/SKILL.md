@@ -1,6 +1,6 @@
 ---
 name: stabilization-loop
-description: Stabilize and bugfix a software project by repeatedly testing and fixing in a loop until everything works.
+description: Stabilizes a software project by repeatedly running and testing it in a loop, fixing any issues.
 license: MIT
 ---
 
@@ -10,14 +10,16 @@ Stabilize the project:
 3. Stop the server if it is running.
 4. Start the server, wait until it is completely up and ready.
 5. Run the tests.
-6. If the tests succeed and the server hasn't crashed or logged any errors, then STOP.
-7. If the test fails, then analyze the test errors, try to fix them and go to step 1.
-8. If the server crashes or logged an error, then analyze the crashes or errors, try to fix them and go to step 1.
-
-Once you are done:
-- Stop the server.
-- Tag the latest commit message in the local Git repository as "works".  
-- Provide a concise report of the problems found and fixed.
+6. If any test fails, then analyze the test errors, try to fix them and go to step 1.
+7. If the server crashes or logged an error, then analyze the crashes or errors, try to fix them and go to step 1.
+8. If you have the `consistency-check` skill, then run that on the project as well.
+9. Start the server, wait until it is completely up and ready.
+10. Run the tests.
+11. If any test or the server fails, then go to step 6.
+12. Stop the server.
+13. Commit the current code.
+14. Tag the latest commit as "works".  
+15. Provide a concise report.
 
 Remarks:
 - **CRITICAL**: NEVER run more than one instance of the server at the same time.
