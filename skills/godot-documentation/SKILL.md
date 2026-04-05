@@ -13,15 +13,17 @@ This skill contains the complete official Godot Engine documentation from the `s
 
 If the `references` folder is missing, then:
 1. Git clone https://github.com/godotengine/godot-docs into the same folder as this skill file is located in.
-2. Create the `references` folder under the folder this skill file is located in.
-3. Move the following folders from the `godot-docs` folder into the `references` folder: `classes`, `tutorials`, `engine_details`, `getting_started`, `community`, `about`
+2. Switch to the `stable` branch in the Git working copy cloned into the `godot-docs` folder.
+3. Create the `references` folder under the folder this skill file is located in.
+4. Move the following file from the `godot-docs` folder into the `references` folder: `index.rst`
+5. Move the following folders from the `godot-docs` folder into the `references` folder: `classes`, `tutorials`, `engine_details`, `getting_started`, `community`, `about`
+6. Delete the `godot-docs` repository folder (what you have just cloned).
 
 ## Update this skill
 
 If the Godot version increases, then update this skill by:
-1. Run `git pull` in the `godot-docs` folder.
-2. Remove the `references` folder.
-3. Continue from step 2. of the "Initialize this skill" section above to finish the update
+1. Remove the `references` folder.
+2. Run all steps of the "Initialize this skill" section above.
 
 # When to Use
 
