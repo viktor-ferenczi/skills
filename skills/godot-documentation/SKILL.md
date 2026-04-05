@@ -51,10 +51,10 @@ The documentation files are in reStructuredText (rst) format.
 # Key References
 
 ## Class Reference
-- Node types: `references/classes/class_node.md`, `references/classes/class_node2d.md`, `references/classes/class_node3d.md`
-- Physics: `references/classes/class_characterbody2d.md`, `references/classes/class_characterbody3d.md`, `references/classes/class_rigidbody2d.md`, `references/classes/class_rigidbody3d.md`
-- UI: `references/classes/class_control.md`, `references/classes/class_container.md`, `references/classes/class_label.md`
-- Resources: `references/classes/class_resource.md`, `references/classes/class_packedscene.md`
+- Node types: `references/classes/class_node.rst`, `references/classes/class_node2d.rst`, `references/classes/class_node3d.rst`
+- Physics: `references/classes/class_characterbody2d.rst`, `references/classes/class_characterbody3d.rst`, `references/classes/class_rigidbody2d.rst`, `references/classes/class_rigidbody3d.rst`
+- UI: `references/classes/class_control.rst`, `references/classes/class_container.rst`, `references/classes/class_label.rst`
+- Resources: `references/classes/class_resource.rst`, `references/classes/class_packedscene.rst`
 
 ## Tutorials by Topic
 - Scripting: `references/tutorials/scripting/`
