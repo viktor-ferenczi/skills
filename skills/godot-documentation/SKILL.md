@@ -74,7 +74,7 @@ The documentation files are in reStructuredText (rst) format.
 
 # Usage Guidelines
 
-1. **Always prefer this documentation** over guessing or relying on potentially outdated information in other skills
+1. **Always prefer this documentation** over guessing or relying on potentially outdated information
 2. **Check class reference first** when unsure about method signatures, property types, or signal parameters
 3. **Cross-reference tutorials** for recommended patterns and best practices
 4. **Note**: Image references in the docs point to the original repo paths and won't render locally — focus on the text content
