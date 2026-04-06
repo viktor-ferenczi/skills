@@ -2,7 +2,6 @@
 name: godot-documentation
 description: Complete official Godot Engine documentation. Covers getting started guides, tutorials, API class reference, engine details, and community resources.
 license: Creative Commons Legal Code 3 (same as Godot's documentation)
-trigger: always
 ---
 
 # Godot Engine Official Documentation
