@@ -85,6 +85,9 @@ tiers correctly before spending tokens on detailed reads. This avoids lengthy, r
 After first generation, ask the user where to store the documentation permanently. An active project is a natural
 location, but size constraints or other requirements may dictate otherwise. Clarify with the user if unclear.
 
+Suggest that the user add references to the generated documentation and this skill in the project's AGENTS.md,
+CLAUDE.md, or other relevant project-specific prompt file for the agentic coding tool(s) used in the project.
+
 # Work on the actual task at hand
 
 Once the documentation is ready, start from the TOC and use progressive disclosure to understand the high-level
