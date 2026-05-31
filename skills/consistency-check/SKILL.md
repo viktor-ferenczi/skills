@@ -10,6 +10,4 @@ license: MIT
 4. Update the documentation as needed to reflect the current code and configuration.
 5. Check the consistency of the code, configuration, and documentation together. If any issues are found, fix them and return to step 3.
 
-Once done:
-- Commit the changes to the Git working copy, if any.
-- Provide a concise report of the fixes made, if any.
+Once done, provide a concise report of the fixes made (if any).

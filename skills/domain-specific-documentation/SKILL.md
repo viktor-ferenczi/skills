@@ -1,6 +1,6 @@
 ---
 name: domain-specific-documentation
-description: Systematic plan for generating domain-specific documentation to optimize the work on actual tasks in the same domain down the line. Use this skill if the task at hand involves working with a significant number of documents or resources, especially if they relate to each other in intricate ways.
+description: Systematic plan for generating domain-specific documentation from any documents, including but not limited to source code. Use this skill if the task at hand involves working with a significant number of documents or resources, especially if they relate to each other in intricate ways and their total size exceeds the maximum context size.
 license: MIT
 ---
 
@@ -87,8 +87,3 @@ location, but size constraints or other requirements may dictate otherwise. Clar
 
 Suggest that the user add references to the generated documentation and this skill in the project's AGENTS.md,
 CLAUDE.md, or other relevant project-specific prompt file for the agentic coding tool(s) used in the project.
-
-# Work on the actual task at hand
-
-Once the documentation is ready, start from the TOC and use progressive disclosure to understand the high-level
-context before reading further documents or making changes.

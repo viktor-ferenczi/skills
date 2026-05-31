@@ -17,7 +17,7 @@ Stabilize the project:
 10. Run the tests.
 11. If any test or the server fails, then go to step 6.
 12. Stop the server.
-13. Commit the current code.
+13. Commit the current code into the current branch.
 14. Tag the latest commit as "works".
 15. Provide a concise report.
 
