@@ -31,7 +31,7 @@ Range: `-INF <= y <= INF`
 It is an error for `x` to be less than or equal to 0.
 
 This function operates on single-precision floating point values, use
-[SDL_log](SDL_log) for double-precision floats.
+[SDL_log](SDL_log__lowercase) for double-precision floats.
 
 This function may use a different approximation across different versions,
 platforms and configurations. i.e, it can return a different value given
@@ -48,7 +48,7 @@ This function is available since SDL 3.2.0.
 
 ## See Also
 
-- [SDL_log](SDL_log)
+- [SDL_log](SDL_log__lowercase)
 - [SDL_expf](SDL_expf)
 
 ----

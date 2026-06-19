@@ -50,6 +50,12 @@ rewritten to point at the destination page (see [UPDATING.md](UPDATING.md)).
    are bare page names; in this skill they resolve to
    `references/SDL_Foo.md`. When you follow a link from a wiki page, prepend
    `references/` and append `.md` if the link doesn't already include them.
+   Six pages whose names collide only by letter case (so they cannot coexist
+   on Windows/macOS filesystems) were renamed with a `__uppercase`/
+   `__lowercase` suffix and their inbound links retargeted — e.g. the
+   natural-log `SDL_log` lives at `references/SDL_log__lowercase.md` (so it no
+   longer clashes with the logging `SDL_Log`). See [UPDATING.md](UPDATING.md)
+   for the full list.
 4. **Image links may be broken.** A few pages reference images that live on
    the rendered wiki only — focus on the text, which is complete.
 

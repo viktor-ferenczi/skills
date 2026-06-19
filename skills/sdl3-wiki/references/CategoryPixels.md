@@ -145,7 +145,7 @@ The matrix coefficients are used to convert between YCbCr and RGB colors.
 - [SDL_PIXELFLAG](SDL_PIXELFLAG)
 - [SDL_PIXELLAYOUT](SDL_PIXELLAYOUT)
 - [SDL_PIXELORDER](SDL_PIXELORDER)
-- [SDL_PIXELTYPE](SDL_PIXELTYPE)
+- [SDL_PIXELTYPE](SDL_PIXELTYPE__uppercase)
 <!-- END CATEGORY LIST -->
 
 

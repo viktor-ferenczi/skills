@@ -779,7 +779,7 @@ to look at the Functions section [in a specific category](APIByCategory) instead
 - [SDL_LockTexture](SDL_LockTexture)
 - [SDL_LockTextureToSurface](SDL_LockTextureToSurface)
 - [SDL_Log](SDL_Log)
-- [SDL_log](SDL_log)
+- [SDL_log](SDL_log__lowercase)
 - [SDL_log10](SDL_log10)
 - [SDL_log10f](SDL_log10f)
 - [SDL_LogCritical](SDL_LogCritical)

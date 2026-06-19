@@ -52,7 +52,7 @@ This function is available since SDL 3.2.0.
 
 - [SDL_powf](SDL_powf)
 - [SDL_exp](SDL_exp)
-- [SDL_log](SDL_log)
+- [SDL_log](SDL_log__lowercase)
 
 ----
 [CategoryAPI](CategoryAPI), [CategoryAPIFunction](CategoryAPIFunction), [CategoryStdinc](CategoryStdinc)

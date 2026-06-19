@@ -16,7 +16,7 @@ Defined in [<SDL3/SDL_stdinc.h>](https://github.com/libsdl-org/SDL/blob/main/inc
 
 This is just the prefix! You probably actually want
 [SDL_PRILLd](SDL_PRILLd), [SDL_PRILLu](SDL_PRILLu),
-[SDL_PRILLx](SDL_PRILLx), or [SDL_PRILLX](SDL_PRILLX) instead.
+[SDL_PRILLx](SDL_PRILLx), or [SDL_PRILLX](SDL_PRILLX__uppercase) instead.
 
 Use it like this:
 

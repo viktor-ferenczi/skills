@@ -26,7 +26,7 @@ double SDL_exp(double x);
 
 The definition of `y = exp(x)` is `y = e^x`, where `e` is the base of the
 natural logarithm. The inverse is the natural logarithm,
-[SDL_log](SDL_log).
+[SDL_log](SDL_log__lowercase).
 
 Domain: `-INF <= x <= INF`
 
@@ -53,7 +53,7 @@ This function is available since SDL 3.2.0.
 ## See Also
 
 - [SDL_expf](SDL_expf)
-- [SDL_log](SDL_log)
+- [SDL_log](SDL_log__lowercase)
 
 ----
 [CategoryAPI](CategoryAPI), [CategoryAPIFunction](CategoryAPIFunction), [CategoryStdinc](CategoryStdinc)
