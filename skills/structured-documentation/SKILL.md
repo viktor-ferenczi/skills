@@ -86,6 +86,13 @@ while avoiding collisions that lose work.
    - Write resumable pre-processing scripts with a formal execution plan.
    - Mirror the original directory structure under the output root. Flatten or normalize long/incompatible paths
      and log the mapping to a data file in `data/`.
+   - **Output paths must be unique on case-insensitive filesystems.** No two generated files or directories may
+     differ only in letter casing (e.g. `Parser.md` vs. `parser.md`, or a `Net/` and `net/` directory). Source
+     trees built on Linux routinely contain such siblings, but Windows and macOS treat them as the same path, so
+     committing the docs from Linux and cloning on Windows/macOS causes file collisions (one file overwrites the
+     other, or the checkout fails). Detect case-insensitive path collisions programmatically while building the
+     path mapping and disambiguate them deterministically (e.g. append a short hash or numeric suffix to the
+     colliding name). Record the chosen names in the path-mapping data file so they stay stable across runs.
 
 6. Run pre-processing to completion. Verify every non-skipped document has a description file.
 

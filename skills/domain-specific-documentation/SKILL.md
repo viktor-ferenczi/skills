@@ -66,6 +66,13 @@ Keep index files for reuse and up to date during follow-up tasks.
 Write one summary file per document. Standardize the directory structure around the documents' layout;
 otherwise, assign identifiers (e.g., GUIDs) in the index and use those as names.
 
+**Output paths must be unique on case-insensitive filesystems.** No two generated files or directories may differ
+only in letter casing (e.g. `Parser.md` vs. `parser.md`). Source trees built on Linux routinely contain such
+siblings, but Windows and macOS treat them as the same path, so committing the docs from Linux and cloning on
+Windows/macOS causes file collisions (one file overwrites the other, or the checkout fails). Detect case-insensitive
+path collisions programmatically and disambiguate them deterministically (e.g. append a short hash or numeric
+suffix), recording the chosen names in the index so they stay stable across runs.
+
 Choose AI models and analysis methods by tier and content type. For code, parse with TreeSitter or another suitable parser.
 
 When programmatic analysis can't extract the meaning (e.g., complex source code), pick a model by tier:
