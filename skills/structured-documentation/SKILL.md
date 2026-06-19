@@ -17,6 +17,7 @@ Apply these throughout the pipeline below; they decide what to read, what to cac
 - Process documents (code, configuration, data, prose) with sub-agents, not in one long context.
 - Prefer programmatic extraction and classification over reading full document contents.
 - Store SHA256 hashes to detect changes programmatically, enabling caching of prior results.
+  Hash text and source files by their LF-normalized content (see step 2) so the cache key is platform-independent.
 - Generate and reuse utility scripts to avoid duplicate AI inference.
 - Split work into sub-tasks that fit comfortably under the model's context limit (≈200k tokens). Exceptions allowed.
 
@@ -51,6 +52,12 @@ while avoiding collisions that lose work.
 2. Build a manifest/index of all input documents as JSON or JSONL in the `data/` subdirectory. For each document record: name, location,
    file type, size, **SHA256 hash**, tier (assigned in step 4), and optionally a timestamp (prefer the hash).
    - The hash enables change detection so all downstream analysis can be cached and reused across runs.
+   - **Normalize line endings before hashing text files.** For text and source files, strip carriage returns
+     (convert CRLF and lone CR to LF) on the raw bytes, then hash the LF-only content. This keeps the hash
+     stable across operating systems and Git checkouts — Git with `core.autocrlf=true` rewrites newlines on
+     clone/checkout, which would otherwise change the hash and invalidate the cache for unchanged content.
+     Detect text vs. binary programmatically (e.g. by extension or a null-byte/encoding check) and hash binary
+     files by their exact bytes (no normalization). Apply the same normalization on every run.
    - Identify programmatically generated documents (from code, configuration, or data) and prefer referring to
      the source they are generated from instead of analyzing the generated output.
    - On a re-run, load the prior index and mark documents whose hash matches as cache hits; process only the rest.

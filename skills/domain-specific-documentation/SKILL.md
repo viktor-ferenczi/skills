@@ -11,6 +11,7 @@ license: MIT
 - Use sub-agents to process documents (code, configuration, or other content) required for the task.
 - Prefer programmatic extraction and classification over reading full document contents.
 - Store hashes to detect changes programmatically, enabling caching of prior results.
+  Hash text and source files by their LF-normalized content (see "Document index") so the cache key is platform-independent.
 - Generate and reuse utility scripts to avoid duplicate AI inference.
 
 ## Don't reinvent the wheel
@@ -50,6 +51,13 @@ Use a common format such as JSON or JSONL. The index must include each document'
 Determine tier from heuristics (location, file type) or programmatic semantic analysis; avoid reading whole documents when possible.
 Identify programmatically generated documents (code, configuration or data) and prefer referring to the source they are generated from instead.
 The hash enables change detection so further analysis can be cached. Store a timestamp if applicable, but prefer the hash.
+
+**Normalize line endings before hashing text files.** For text and source files, strip carriage returns (convert
+CRLF and lone CR to LF) on the raw bytes, then hash the LF-only content. This keeps the hash stable across operating
+systems and Git checkouts — Git with `core.autocrlf=true` rewrites newlines on clone/checkout, which would otherwise
+change the hash and invalidate the cache for unchanged content. Detect text vs. binary programmatically (e.g. by
+extension or a null-byte/encoding check) and hash binary files by their exact bytes (no normalization). Apply the
+same normalization on every run.
 
 Keep index files for reuse and up to date during follow-up tasks.
 
