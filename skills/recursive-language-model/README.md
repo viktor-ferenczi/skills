@@ -16,8 +16,9 @@ RLM treats documents as external environments and recursively calls sub-LLMs ove
 ## Quick Start
 
 ```bash
-# 1. Initialize the REPL with your document
-python3 /path/to/rlm_skill/scripts/rlm_repl.py init /path/to/large_document.txt
+# 1. Initialize the REPL with your document (run from this skill's directory,
+#    or prefix scripts/rlm_repl.py with the skill's path)
+python3 scripts/rlm_repl.py init /path/to/large_document.txt
 
 # 2. Scout the content
 python3 scripts/rlm_repl.py exec -c 'print(peek(0, 3000))'

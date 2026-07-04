@@ -1,6 +1,6 @@
 ---
 name: pr-description-concise-markdown
-description: Checks the internal consistency of a software project, fixes any issues found.
+description: Writes a concise, high-level PR description in Markdown for the changes in the current branch. Use when the user asks for a pull request description, merge request summary, or a short summary of what changed on the branch and why. Read-only, changes no files.
 allowed-tools: Read, Bash(git log *), Bash(git diff *)
 license: MIT
 ---

@@ -1,16 +1,18 @@
 ---
 name: godot-documentation
-description: Complete official Godot Engine documentation. Covers getting started guides, tutorials, API class reference, engine details, and community resources.
+description: Installs and serves an offline copy of the official Godot Engine documentation (getting started guides, tutorials, API class reference, engine details). Use when working on a Godot project or GDScript code and you need authoritative API or engine reference. On first use it downloads the docs by cloning godotengine/godot-docs (requires network access and a few hundred MB of disk).
 license: Creative Commons Legal Code 3 (same as Godot's documentation)
 ---
 
 # Godot Engine Official Documentation
 
-This skill contains the complete official Godot Engine documentation from the `stable` branch of [godotengine/godot-docs](https://github.com/godotengine/godot-docs) in its original reStructuredText format.
+This skill serves the official Godot Engine documentation from the `stable` branch of [godotengine/godot-docs](https://github.com/godotengine/godot-docs) in its original reStructuredText format.
 
-# Initialize this skill
+The documentation snapshot is **not bundled** — it is installed into the `references` folder on first use (see below). Once installed, the skill works fully offline.
 
-If the `references` folder is missing, then:
+# Initialize this skill (first use)
+
+If the `references` folder is missing, install the snapshot (needs network access, downloads a few hundred MB):
 1. Git clone https://github.com/godotengine/godot-docs into the same folder as this skill file is located in.
 2. Switch to the `stable` branch in the Git working copy cloned into the `godot-docs` folder.
 3. Create the `references` folder under the folder this skill file is located in.

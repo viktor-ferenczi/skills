@@ -1,6 +1,6 @@
 ---
 name: python-guidelines
-description: Guiding principles for writing clear, concise, human readable and maintainable Python code.
+description: Guiding principles for writing clear, concise, human readable and maintainable Python code. Use whenever writing, refactoring, or reviewing Python code.
 license: MIT
 ---
 

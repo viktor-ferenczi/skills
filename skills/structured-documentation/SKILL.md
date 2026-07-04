@@ -40,6 +40,8 @@ while avoiding collisions that lose work.
 
 # Pipeline
 
+Stages at a glance: **setup** (1) → **index & tier** (2–4) → **describe** (5–7) → **cross-reference & modularize** (8–12) → **enrich & verify** (13–18) → **finalize** (19–20).
+
 1. Set up task management. Parallelize with sub-agents. Ensure resumability after interruption.
    Create a single dedicated subdirectory to hold **everything** this process generates — write nothing to the
    project root. Within it, keep all working data files (index, hashes, reference graph, module list, tier data,
@@ -70,6 +72,7 @@ while avoiding collisions that lose work.
    Ask the user to clarify size thresholds (bytes, characters, tokens, or lines) or expected modules if ambiguous.
    Use heuristics (location, file type) and static analysis to classify tiers **before** spending tokens on reads,
    so lengthy, repetitive, or generated files don't get expensive treatment.
+   The model names below are examples current at the time of writing — substitute the newest equivalents of each tier.
    - Tier 1: High-complexity, usually important, small-to-medium, must be understood in full. Strong reasoning
      model (e.g. Opus 4.8, GPT 5.5, or better).
    - Tier 2: Medium-complexity, occasionally long, simple/repetitive or low-priority. Cheaper, faster model
@@ -78,14 +81,17 @@ while avoiding collisions that lose work.
      (e.g. Haiku 4.5, GPT 5.3-Nano).
 
 5. Pre-process file types programmatically, without per-file AI calls where avoidable:
-   - Generate initial source-code descriptions with language-appropriate documentation tools.
+   - Generate initial source-code descriptions with language-appropriate documentation tools
+     (e.g. `doxygen`, `javadoc`, `pydoc`/Sphinx, `godoc`, `jsdoc`/TypeDoc, `rustdoc` — whatever the language ecosystem provides).
    - Extract structural metadata from each file (e.g. parent class, interfaces, abstract/concrete, fields,
      members, properties, events). Define a consistent header format with a fixed item order across all files.
    - Batch-describe images via a cheap or local multimodal model.
    - Produce one Markdown description file per non-skipped document.
    - Write resumable pre-processing scripts with a formal execution plan.
    - Mirror the original directory structure under the output root. Flatten or normalize long/incompatible paths
-     and log the mapping to a data file in `data/`.
+     and log the mapping to a data file in `data/`. If the input has no usable directory layout to mirror (e.g.
+     a flat dump or colliding names), assign stable identifiers (e.g. GUIDs) in the index and use those as
+     description file names instead.
    - **Output paths must be unique on case-insensitive filesystems.** No two generated files or directories may
      differ only in letter casing (e.g. `Parser.md` vs. `parser.md`, or a `Net/` and `net/` directory). Source
      trees built on Linux routinely contain such siblings, but Windows and macOS treat them as the same path, so
@@ -127,7 +133,8 @@ while avoiding collisions that lose work.
 
 15. Evaluate completeness at project and module levels. Verify a reader can locate any description within a few
     steps via progressive disclosure. If not, return to step 13. Repeat up to 6 times, numbering each run and
-    tracking progress for resumability.
+    tracking progress for resumability. If the cap is reached with gaps remaining, record them and continue to
+    step 16 anyway — the remaining gaps go into the final summary (step 20) for the user to decide on.
 
 16. Verify structure: `TOC.md` links to module descriptions; module descriptions link to document descriptions;
     all links are cross-referenced.
@@ -136,11 +143,12 @@ while avoiding collisions that lose work.
 
 18. Programmatically verify all references. Fix any broken links.
 
-19. Evaluate module boundaries against project context. If inadequate, ask the user for guidance and restructure.
-    Reuse existing work by updating only the differences (using the hashes from step 2). After restructuring,
-    re-verify all references.
+19. Evaluate module boundaries against project context. (This is independent of the completeness loop in
+    step 15 — it questions how documents were grouped, not whether descriptions are complete.) If inadequate,
+    ask the user for guidance and restructure. Reuse existing work by updating only the differences (using the
+    hashes from step 2). After restructuring, re-verify all references.
 
-20. If module boundaries are sound, present a final summary to the user.
+20. Present a final summary to the user, including any completeness gaps left over from step 15.
 
 # Storage and integration
 

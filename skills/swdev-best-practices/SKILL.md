@@ -1,6 +1,6 @@
 ---
 name: swdev-best-practices
-description: List of best practices to follow and principles to adhere to during software development for best results.
+description: Best practices to follow and principles to adhere to during software development. Use when designing, writing, refactoring, or reviewing code in any language, or when the user asks which principle applies to a design decision.
 license: MIT
 ---
 
