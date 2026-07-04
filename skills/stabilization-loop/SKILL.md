@@ -5,7 +5,7 @@ license: MIT
 ---
 
 Stabilize the project:
-1. If there are any local changes, then commit the current code to the local Git repository with commit message "Claude".
+1. If there are any local changes, then commit the current code to the current branch with commit message "Stabilization".
 2. Make sure that the code compiles and the linter checks pass. If not, then fix those and go to step 1.
 3. Stop the server if it is running.
 4. Start the server, wait until it is completely up and ready.
@@ -17,7 +17,7 @@ Stabilize the project:
 10. Run the tests.
 11. If any test or the server fails, then go to step 6.
 12. Stop the server.
-13. Commit the current code into the current branch.
+13. Commit the current code into the current branch with commit message "Consistency", but only if there are any changes.
 14. Tag the latest commit as "works".
 15. Provide a concise report.
 
