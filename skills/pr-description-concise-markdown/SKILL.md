@@ -6,6 +6,7 @@ license: MIT
 ---
 
 Write a concise PR description for the changes in the current branch.
+Consider only the new commits relative to the base branch (it may be other than `main`).
 For complex code changes stay at a high, architect level.
 For small changes provide a high level summary of what has changed and why.
 Provide it in a single Markdown block directly in this conversation.
