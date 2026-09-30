@@ -13,3 +13,11 @@ Provide it in a single Markdown block directly in this conversation.
 Start right away with the list of changes without any header. 
 Do not write any test instructions or any other explanation.
 Do not change any files.
+
+Start PR descriptions with a short "executive overview", do not include a "Why?"
+heading at the top. After that a Changes section, then a Testing, Deployment and
+any other sections which may be required depending on the topic. Do not repeat
+what one can easily read from the documentation and/or code added by the PR.
+Highlight what one must be aware of during code review, deployment or subsequent
+manual testing (if applicable). Still highlight any important consequences,
+should there be any.
